@@ -33,6 +33,67 @@ export default function Home() {
     <img src="/avatar.png" alt="Azynar" />
   </div>
 </section>
+
+<section className="projects" id="projects">
+  <p className="section-tag">// What I've Built</p>
+  <h2 className="section-title">Projects</h2>
+
+  <div className="projects-grid">
+
+    <div className="project-card">
+      <div className="project-number">01</div>
+      <h3 className="project-name">Web3 Landing Page</h3>
+      <p className="project-desc">
+        A clean, modern landing page for a Web3 project. Built with 
+        Next.js and Tailwind CSS.
+      </p>
+      <div className="project-tags">
+        <span className="tag">Next.js</span>
+        <span className="tag">Tailwind</span>
+        <span className="tag">Web3</span>
+      </div>
+      <div className="project-links">
+        <a href="#" className="project-link">↗ Live Demo</a>
+        <a href="#" className="project-link">⌥ GitHub</a>
+      </div>
+    </div>
+
+    <div className="project-card">
+      <div className="project-number">02</div>
+      <h3 className="project-name">DeFi Dashboard</h3>
+      <p className="project-desc">
+        A dashboard for tracking DeFi portfolio positions and 
+        on-chain activity in real time.
+      </p>
+      <div className="project-tags">
+        <span className="tag">React</span>
+        <span className="tag">Ethers.js</span>
+        <span className="tag">Supabase</span>
+      </div>
+      <div className="project-links">
+        <a href="#" className="project-link">↗ Live Demo</a>
+        <a href="#" className="project-link">⌥ GitHub</a>
+      </div>
+    </div>
+
+    <div className="project-card">
+      <div className="project-number">03</div>
+      <h3 className="project-name">Protocol Docs</h3>
+      <p className="project-desc">
+        Comprehensive developer documentation for a DeFi protocol — 
+        covering architecture, SDK references and integration guides.
+      </p>
+      <div className="project-tags">
+        <span className="tag">Technical Writing</span>
+        <span className="tag">Docusaurus</span>
+      </div>
+      <div className="project-links">
+        <a href="#" className="project-link">↗ Read Docs</a>
+      </div>
+    </div>
+
+  </div>
+</section>
     </main>
   )
 }
