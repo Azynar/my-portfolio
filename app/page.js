@@ -94,6 +94,48 @@ export default function Home() {
 
   </div>
 </section>
+
+<section className="skills" id="skills">
+  <p className="section-tag">// What I Work With</p>
+  <h2 className="section-title">Skills & Tools</h2>
+
+  <div className="skills-grid">
+
+    <div className="skill-group">
+      <h3 className="skill-group-title">Blockchain Dev</h3>
+      <p className="skill-group-sub">Smart Contracts & Protocols</p>
+      <ul className="skill-list">
+        <li>Solidity</li>
+        <li>Hardhat</li>
+        <li>Ethers.js</li>
+        <li>Web3.js</li>
+      </ul>
+    </div>
+
+    <div className="skill-group">
+      <h3 className="skill-group-title">Frontend</h3>
+      <p className="skill-group-sub">UI & Web Development</p>
+      <ul className="skill-list">
+        <li>React / Next.js</li>
+        <li>JavaScript</li>
+        <li>HTML / CSS</li>
+        <li>Tailwind CSS</li>
+      </ul>
+    </div>
+
+    <div className="skill-group">
+      <h3 className="skill-group-title">Technical Writing</h3>
+      <p className="skill-group-sub">Docs, Blogs & Content</p>
+      <ul className="skill-list">
+        <li>Developer Docs</li>
+        <li>Whitepaper Writing</li>
+        <li>Blog Articles</li>
+        <li>API Reference</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
     </main>
   )
 }

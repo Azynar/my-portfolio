@@ -251,3 +251,67 @@ body {
 .project-link:hover {
   color: var(--accent);
 }
+
+/* ── SKILLS ─────────────────────────────── */
+.skills {
+  padding: 7rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: border-color 0.2s;
+}
+
+.skill-group:hover {
+  border-color: var(--accent);
+}
+
+.skill-group-title {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.skill-group-sub {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skill-list li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.skill-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.skill-list li:hover {
+  color: var(--text);
+}
