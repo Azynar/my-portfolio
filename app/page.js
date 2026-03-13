@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
   return (
     <main>
@@ -136,6 +140,66 @@ export default function Home() {
 
   </div>
 </section>
+
+<section className="contact" id="contact">
+  <p className="section-tag">// Get In Touch</p>
+  <h2 className="section-title">Let's Build Together</h2>
+
+  <div className="contact-wrap">
+
+    <div className="contact-left">
+      <h3 className="contact-heading">Got a project in mind?</h3>
+      <p className="contact-desc">
+        Whether you need a Web3 landing page, smart contract development, 
+        or clear technical writing for your protocol — I'm open to 
+        freelance projects. Let's talk.
+      </p>
+
+      <div className="contact-links">
+  <a href="https://twitter.com/Azynar01" className="contact-link">
+    <span>𝕏</span> Azynar of Web3
+  </a>
+  <a href="https://www.linkedin.com/in/abdulazeem-badmus-bb748b195/" className="contact-link">
+    <span>in</span> Abdulazeem Badmus
+  </a>
+  <a href="https://github.com/Azynar" className="contact-link">
+    <span>⌥</span> github.com/Azynar
+  </a>
+  <a href="https://wa.me/2347032396032" className="contact-link">
+    <span>💬</span> WhatsApp
+  </a>
+  <a href="mailto:azynar35@@gmail.com" className="contact-link">
+    <span>✉</span> azynar35@gmail.com
+  </a>
+</div>
+    </div>
+
+    <div className="contact-right">
+      <div className="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Satoshi Nakamoto" />
+      </div>
+      <div className="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" />
+      </div>
+      <div className="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button className="btn-primary" onClick={() => alert('Message coming soon! Reach me directly via email or socials.')}>
+  Send Message →
+</button>
+    </div>
+
+  </div>
+</section>
+<footer className="footer">
+  <div className="footer-left">
+    © 2025 <span>Azynar</span> — Built with Next.js
+  </div>
+  <a href="#" className="footer-top">Back to top ↑</a>
+</footer>
     </main>
   )
 }
