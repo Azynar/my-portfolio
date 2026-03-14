@@ -6,8 +6,8 @@
   --border: #1a2a4a;
   --accent: #1e6fff;
   --accent2: #4d9fff;
-  --text: #e8edf5;
-  --muted: #4a6080;
+  --text: #f0f4ff;
+  --muted: #8899aa;
   --font-heading: var(--font-syne), sans-serif;
   --font-body: var(--font-mono), monospace;
 }
