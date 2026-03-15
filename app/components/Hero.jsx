@@ -15,7 +15,7 @@ export default function Hero() {
         Web3 Developer & Technical Writer.
       </p>
 
-      <p style={{fontFamily: 'var(--font-syne)'}} className="text-[#8899aa] text-1x1 leading-relaxed mb-10 max-w-xl">
+      <p style={{fontFamily: 'var(--font-syne)'}} className="text-[#8899aa] text-1x1g leading-relaxed mb-10 max-w-xl">
         I'm Abdulazeem — a Web3 developer and technical writer focused on
         building clean, functional products and making complex blockchain
         concepts easy to understand. I build landing pages, dApps, and write
