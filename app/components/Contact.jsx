@@ -5,11 +5,11 @@ import { FiGithub, FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const socials = [
-  { icon: <FiTwitter size={18} />, label: 'Twitter', handle: '@yourhandle', href: 'https://twitter.com/yourhandle' },
-  { icon: <FiLinkedin size={18} />, label: 'LinkedIn', handle: 'linkedin.com/in/yourname', href: 'https://linkedin.com/in/yourname' },
+  { icon: <FiTwitter size={18} />, label: 'Twitter', handle: '@Azynar01', href: 'https://twitter.com/Azynar01' },
+  { icon: <FiLinkedin size={18} />, label: 'LinkedIn', handle: 'linkedin.com/in/abdulazeem-badmus', href: 'https://linkedin.com/in/abdulazeem-badmus-bb748b195' },
   { icon: <FiGithub size={18} />, label: 'GitHub', handle: 'github.com/Azynar', href: 'https://github.com/Azynar' },
-  { icon: <FaWhatsapp size={18} />, label: 'WhatsApp', handle: 'Chat directly', href: 'https://wa.me/yournumber' },
-  { icon: <FiMail size={18} />, label: 'Email', handle: 'youremail@gmail.com', href: 'mailto:youremail@gmail.com' },
+  { icon: <FaWhatsapp size={18} />, label: 'WhatsApp', handle: 'Chat directly', href: 'https://wa.me/2347032396032' },
+  { icon: <FiMail size={18} />, label: 'Email', handle: 'azynar35@gmail.com', href: 'mailto:azynar35@gmail.com' },
 ];
 
 export default function Contact() {
@@ -75,7 +75,7 @@ export default function Contact() {
                Send Message →
             </button>
             <a 
-              href={`https://wa.me/yournumber?text=Hi%20Azynar!%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20work%20with%20you.%20Could%20we%20talk%20about%20a%20project%3F`}
+              href={`https://wa.me/2347032396032?text=Hi%20Azynar!%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20work%20with%20you.%20Could%20we%20talk%20about%20a%20project%3F`}
               target="_blank"
               rel="noopener noreferrer"
               style={{border: '1px solid var(--border)', fontFamily: 'var(--font-syne)', fontWeight: 700}} 
