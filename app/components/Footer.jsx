@@ -1,10 +1,20 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { FiGithub, FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
     <footer style={{borderTop: '1px solid var(--border)'}} className="px-24 py-12">
-      <div style={{maxWidth: '1100px', margin: '0 auto'}} className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
+      <motion.div
+  i     nitial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        style={{maxWidth: '1100px', margin: '0 auto'}}
+        className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0"
+      >
         <div className="flex flex-col gap-1">
           <span style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-[#f0f4ff] text-lg">
             Azynar<span style={{color: 'var(--accent)'}}>.</span>
@@ -36,7 +46,7 @@ export default function Footer() {
           Back to top ↑
         </a>
 
-      </div>
+      </motion.div>
     </footer>
   );
 }

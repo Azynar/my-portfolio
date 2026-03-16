@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 import { SiSolidity, SiEthereum, SiReact, SiNextdotjs, SiTailwindcss, SiJavascript, SiNodedotjs, SiGit } from 'react-icons/si';
 import { FiFileText, FiBook, FiEdit, FiCode } from 'react-icons/fi';
 
@@ -33,15 +37,36 @@ export default function Skills() {
     <section id="skills" className="px-6 md:px-24 py-20 md:py-32">
       <div style={{maxWidth: '1100px', margin: '0 auto'}}>
 
-        <p className="text-[#8899aa] text-xs uppercase tracking-widest mb-4">Expertise</p>
-        <h2 style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-[#8899aa] text-xs uppercase tracking-widest mb-4"
+      >
+        Expertise
+      </motion.p>
+      <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
+          className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16"
+      >
           Skills & Tools.
-        </h2>
-
+      </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {skillGroups.map((group) => (
-            <div key={group.title} style={{background: 'var(--surface)', border: '1px solid var(--border)'}} className="rounded-2xl p-8 flex flex-col gap-6 hover:border-[#1e6fff] transition-all duration-300">
-
+          {skillGroups.map((group, index) => (
+            <motion.div
+            key={group.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            viewport={{ once: true }}
+            style={{background: 'var(--surface)', border: '1px solid var(--border)'}}
+            className="rounded-2xl p-8 flex flex-col gap-6 hover:border-[#1e6fff] transition-all duration-300"
+          >
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3" style={{color: 'var(--accent)'}}>
                   {group.icon}
@@ -62,7 +87,7 @@ export default function Skills() {
                 ))}
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 

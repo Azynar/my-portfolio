@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiGithub, FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -18,15 +19,36 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 md:px-24 py-20 md:py-32">
       <div style={{maxWidth: '1100px', margin: '0 auto'}}>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-[#8899aa] text-xs uppercase tracking-widest mb-4"
+      >
+        Contact
+      </motion.p>
 
-        <p className="text-[#8899aa] text-xs uppercase tracking-widest mb-4">Contact</p>
-        <h2 style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16">
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
+        className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16"
+      >
           Get In Touch.
-        </h2>
+      </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
 
-          <div className="flex flex-col gap-8">
+        <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-8"
+        >
             <p style={{fontFamily: 'var(--font-syne)', fontWeight: 700}} className="text-2xl text-[#f0f4ff]">
               Got a project in mind?
             </p>
@@ -52,9 +74,17 @@ export default function Contact() {
               </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-4">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-4"
+          >
+
+          
             <div className="flex flex-col gap-2">
               <label className="text-[#8899aa] text-xs uppercase tracking-widest">Full Name</label>
               <input type="text" placeholder="Full Name" style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}} className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors" />
@@ -83,7 +113,7 @@ export default function Contact() {
             >
               Chat on WhatsApp
             </a>
-          </div>
+          </motion.div>
 
         </div>
       </div>
