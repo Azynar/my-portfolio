@@ -32,15 +32,15 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="px-24 py-32">
+    <section id="projects" className="px-6 md:px-24 py-20 md:py-32">
       <div style={{maxWidth: '1100px', margin: '0 auto'}}>
 
         <p className="text-[#8899aa] text-xs uppercase tracking-widest mb-4">Work</p>
-        <h2 style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-5xl text-[#f0f4ff] tracking-tight mb-16">
+        <h2 style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16">
           Things I've Built.
         </h2>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div key={project.number} style={{background: 'var(--surface)', border: '1px solid var(--border)'}} className="rounded-2xl overflow-hidden hover:border-[#1e6fff] transition-all duration-300">
 

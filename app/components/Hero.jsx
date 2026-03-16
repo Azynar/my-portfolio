@@ -1,13 +1,13 @@
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center px-24 pt-32 pb-16">
+    <section id="hero" className="min-h-screen flex flex-col justify-center px-6 md:px-24 pt-32 pb-16">
 
       <div className="flex items-center gap-2 mb-8">
         <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
         <span className="text-green-400 text-xs tracking-widest uppercase">Available for work</span>
       </div>
 
-      <h1 style={{fontFamily: 'var(--font-syne)', fontWeight: 800, lineHeight: 1.05}} className="text-7xl text-[#f0f4ff] tracking-tight mb-6">
+      <h1 style={{fontFamily: 'var(--font-syne)', fontWeight: 800, lineHeight: 1.05}} className="text-4xl md:text-8xl text-[#f0f4ff] tracking-tight mb-6">
         Hi, I'm Azynar <br /> <span style={{color: 'var(--accent)'}}>of Web3.</span>
       </h1>
 
@@ -22,7 +22,7 @@ export default function Hero() {
         docs that developers actually enjoy reading.
       </p>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
         <a href="#projects" style={{fontFamily: 'var(--font-syne)', fontWeight: 700}} className="bg-[#1e6fff] text-white text-xs uppercase tracking-widest px-8 py-3 rounded-full hover:opacity-80 transition-opacity no-underline">
           Hire me!
         </a>

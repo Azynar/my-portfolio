@@ -30,15 +30,15 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-24 py-32">
+    <section id="skills" className="px-6 md:px-24 py-20 md:py-32">
       <div style={{maxWidth: '1100px', margin: '0 auto'}}>
 
         <p className="text-[#8899aa] text-xs uppercase tracking-widest mb-4">Expertise</p>
-        <h2 style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-5xl text-[#f0f4ff] tracking-tight mb-16">
+        <h2 style={{fontFamily: 'var(--font-syne)', fontWeight: 800}} className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16">
           Skills & Tools.
         </h2>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillGroups.map((group) => (
             <div key={group.title} style={{background: 'var(--surface)', border: '1px solid var(--border)'}} className="rounded-2xl p-8 flex flex-col gap-6 hover:border-[#1e6fff] transition-all duration-300">
 
