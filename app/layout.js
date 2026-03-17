@@ -16,14 +16,17 @@ const mono = IBM_Plex_Mono({
 export const metadata = {
   title: 'Azynar — Web3 Developer & Technical Writer',
   description: 'Portfolio of Azynar — Web3 Developer & Technical Writer',
-}
+  icons: {
+    icon: '/avatar.png',
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${syne.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${syne.variable} ${mono.variable}`}>
         {children}
       </body>
     </html>
-  )
+  );
 }

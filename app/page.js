@@ -5,10 +5,12 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
 
 export default function Home() {
   return (
     <main style={{background: 'var(--bg)', minHeight: '100vh'}}>
+      <Preloader />
       <Navbar />
       <Hero />
       <About />
