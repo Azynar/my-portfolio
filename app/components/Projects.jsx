@@ -2,24 +2,27 @@
 
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import Image from 'next/image';
 
 const projects = [
   {
     number: '01',
+    title: 'Personal Portfolio',
+    desc: 'A clean, modern developer portfolio built with Next.js, Tailwind CSS and Framer Motion. Features a 3D sphere, scroll animations and a blog page.',
+    tags: ['Next.js', 'Tailwind', 'Framer Motion', 'Three.js'],
+    demo: 'https://azynarofweb3.vercel.app',
+    github: 'https://github.com/Azynar/my-portfolio',
+    image: '/portfolio.png',
+    isWriting: false,
+  },
+  {
+    number: '02',
     title: 'Web3 Landing Page',
     desc: 'A clean, modern landing page for a Web3 project. Built with Next.js and Tailwind CSS.',
     tags: ['Next.js', 'Tailwind', 'Web3'],
     demo: '#',
     github: '#',
-    isWriting: false,
-  },
-  {
-    number: '02',
-    title: 'DeFi Dashboard',
-    desc: 'A dashboard for tracking DeFi portfolio positions and on-chain activity in real time.',
-    tags: ['React', 'Ethers.js', 'Supabase'],
-    demo: '#',
-    github: '#',
+    image: null,
     isWriting: false,
   },
   {
@@ -29,6 +32,7 @@ const projects = [
     tags: ['Technical Writing', 'Docusaurus'],
     demo: '#',
     github: '#',
+    image: null,
     isWriting: true,
   },
 ];
@@ -56,7 +60,7 @@ export default function Projects() {
           style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
           className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16"
         >
-          Things I've Built.
+          {`Things I've Built.`}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -70,10 +74,23 @@ export default function Projects() {
               style={{background: 'var(--surface)', border: '1px solid var(--border)'}}
               className="rounded-2xl overflow-hidden hover:border-[#1e6fff] transition-all duration-300"
             >
-              <div style={{background: 'var(--bg)', height: '220px'}} className="w-full flex items-center justify-center border-b border-[#1a2a4a]">
-                <span style={{fontFamily: 'var(--font-syne)'}} className="text-[#1a2a4a] text-6xl font-extrabold">
-                  {project.number}
-                </span>
+              <div style={{background: 'var(--bg)', height: '220px'}} className="w-full overflow-hidden border-b border-[#1a2a4a]">
+                {project.image ? (
+                    <div className="relative w-full h-full">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                      <span style={{fontFamily: 'var(--font-syne)'}} className="text-[#1a2a4a] text-6xl font-extrabold">
+                          {project.number}
+                      </span>
+                  </div>
+          )}
               </div>
 
               <div className="p-6 flex flex-col gap-4">

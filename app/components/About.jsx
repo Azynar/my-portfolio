@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -59,9 +60,11 @@ export default function About() {
             className="relative"
             style={{maxHeight: '500px', overflow: 'hidden'}}
           >
-            <img
+            <Image
               src="/avatar.png"
               alt="Azynar"
+              width={500}
+              height={500}
               className="w-full object-cover object-top"
               style={{filter: 'grayscale(20%)', maxHeight: '500px'}}
             />

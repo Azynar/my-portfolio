@@ -13,10 +13,10 @@ const skillGroups = [
     skills: ['Solidity (Learning)', 'Smart Contracts', 'Web3 Concepts', 'ERC-20', 'Ethers.js (Learning)'],
   },
   {
-    title: 'Frontend Dev',
-    sub: 'UI & Web Development',
+    title: 'Web Development',
+    sub: 'Web2 & Web3 Frontend',
     icon: <SiReact size={18} />,
-    skills: ['React', 'Next.js', 'JavaScript', 'HTML & CSS', 'Tailwind CSS', 'Node.js'],
+    skills: ['React', 'Next.js', 'JavaScript', 'HTML & CSS', 'Tailwind CSS', 'E-Commerce', 'Landing Pages', 'Business Sites'],
   },
   {
     title: 'Technical Writing',
