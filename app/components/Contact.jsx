@@ -14,8 +14,47 @@ const socials = [
 ];
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
 
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  message: '',
+});
+
+const handleSubmit = async () => {
+  setLoading(true);
+  setError('');
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => {
+        setSubmitted(false);
+        }, 3000);
+      }
+      } else {
+      setError(data.error || 'Something went wrong. Try again.');
+      }
+      } catch (err) {
+          setError('Something went wrong. Try again.');
+      } finally {
+          setLoading(false);
+      }
+    };
+  
   return (
     <section id="contact" className="px-6 md:px-24 py-20 md:py-32">
       <div style={{maxWidth: '1100px', margin: '0 auto'}}>
@@ -53,9 +92,9 @@ export default function Contact() {
               Got a project in mind?
             </p>
             <p className="text-[#8899aa] text-sm leading-relaxed">
-              Whether you need a Web3 landing page, smart contract development,
+              {`Whether you need a Web3 landing page, smart contract development,
               or clear technical writing for your protocol — I'm open to
-              freelance projects. Let's talk.
+              freelance projects. Let's talk.`}
             </p>
             <div className="flex flex-col gap-4">
               {socials.map((social) => (
@@ -87,23 +126,48 @@ export default function Contact() {
           
             <div className="flex flex-col gap-2">
               <label className="text-[#8899aa] text-xs uppercase tracking-widest">Full Name</label>
-              <input type="text" placeholder="Full Name" style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}} className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors" />
+              <input
+                type="text"
+                placeholder="Satoshi Nakamoto"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}}
+                className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors"
+              />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[#8899aa] text-xs uppercase tracking-widest">Email</label>
-              <input type="email" placeholder="you@example.com" style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}} className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors" />
+              <input
+                  type="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}}
+                  className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors"
+              />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[#8899aa] text-xs uppercase tracking-widest">Message</label>
-              <textarea placeholder="Hi Azynar! I came across your portfolio and I'd love to work with you. Could we talk about a project?" style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', resize: 'none'}} className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors h-36" />
+              <textarea 
+                placeholder="Hi Azynar! I came across your portfolio and I'd love to work with you. Could we talk about a project?" 
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', resize: 'none'}} 
+                className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors h-36" 
+              />
             </div>
             <button
-              onClick={() => alert('Email sending coming soon! Reach me directly via WhatsApp or socials for now.')}
-              style={{background: 'var(--accent)', fontFamily: 'var(--font-syne)', fontWeight: 700}}
-              className="w-full py-3 rounded-xl text-white text-sm uppercase tracking-widest hover:opacity-80 transition-all"
-            >
-               Send Message →
+              onClick={handleSubmit}
+              disabled={loading || submitted}
+              style={{background: submitted ? '#22c55e' : 'var(--accent)', fontFamily: 'var(--font-syne)', fontWeight: 700}}
+              className="w-full py-3 rounded-xl text-white text-sm uppercase tracking-widest hover:opacity-80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+>
+              {loading ? 'Sending...' : submitted ? 'Message Sent ✓' : 'Send Message →'}
             </button>
+
+            {error && (
+                <p className="text-red-400 text-xs text-center">{error}</p>
+            )}
             <a 
               href={`https://wa.me/2347032396032?text=Hi%20Azynar!%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20work%20with%20you.%20Could%20we%20talk%20about%20a%20project%3F`}
               target="_blank"
