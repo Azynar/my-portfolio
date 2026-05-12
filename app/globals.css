@@ -1,23 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #050a18;
-  --surface: #0a1628;
-  --border: #1a2a4a;
+  --bg: #f8f8f5;
+  --white: #ffffff;
+  --surface: #fdfdfb;
+  --surface-2: #f2f4f8;
+  --dark: #050a18;
   --accent: #1e6fff;
-  --accent2: #4d9fff;
-  --text: #f0f4ff;
-  --muted: #8899aa;
-  --font-heading: var(--font-syne), sans-serif;
-  --font-body: var(--font-mono), monospace;
+  --text: #0a0a0a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 55%);
   color: var(--text);
-  font-family: var(--font-body);
+  font-family: var(--font-mono), sans-serif;
 }
+
+/* Smoothly animate theme changes for properties that use CSS variables */
+html, body, nav, a, button, .rounded-2xl, .rounded-full {
+  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease, box-shadow 300ms ease;
+}
+/* Dark theme removed - site uses default light variables */

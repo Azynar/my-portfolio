@@ -9,7 +9,7 @@ const socials = [
   { icon: <FiTwitter size={18} />, label: 'Twitter', handle: '@Azynar01', href: 'https://twitter.com/Azynar01' },
   { icon: <FiLinkedin size={18} />, label: 'LinkedIn', handle: 'linkedin.com/in/abdulazeem-badmus', href: 'https://linkedin.com/in/abdulazeem-badmus-bb748b195' },
   { icon: <FiGithub size={18} />, label: 'GitHub', handle: 'github.com/Azynar', href: 'https://github.com/Azynar' },
-  { icon: <FaWhatsapp size={18} />, label: 'WhatsApp', handle: 'Chat directly', href: 'https://wa.me/2347032396032' },
+  { icon: <FaWhatsapp size={18} />, label: 'WhatsApp', handle: 'wa.me/2347032396032', href: 'https://wa.me/2347032396032' },
   { icon: <FiMail size={18} />, label: 'Email', handle: 'azynar35@gmail.com', href: 'mailto:azynar35@gmail.com' },
 ];
 
@@ -24,46 +24,47 @@ export default function Contact() {
   message: '',
 });
 
-const handleSubmit = async () => {
-  setLoading(true);
-  setError('');
+  const messagePlaceholder = "Hi Azynar! I came across your portfolio and I would love to work with you. Could we talk about a project?";
+  const whatsappNumber = '2347032396032';
+  const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formData.message || messagePlaceholder)}`;
 
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    setError('');
 
-    const data = await response.json();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
 
-    if (response.ok) {
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => {
-        setSubmitted(false);
-        }, 3000);
+      if (!response.ok) {
+        setError(data.error || 'Something went wrong. Try again.');
+        return;
       }
-      } else {
-      setError(data.error || 'Something went wrong. Try again.');
-      }
-      } catch (err) {
-          setError('Something went wrong. Try again.');
-      } finally {
-          setLoading(false);
-      }
-    };
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch {
+      setError('Something went wrong. Try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
   
   return (
-    <section id="contact" className="px-6 md:px-24 py-20 md:py-32">
-      <div style={{maxWidth: '1100px', margin: '0 auto'}}>
+    <section id="contact" className="bg-[var(--bg)] px-6 py-20 md:px-24 md:py-28">
+      <div className="mx-auto max-w-6xl">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="text-[#8899aa] text-xs uppercase tracking-widest mb-4"
+        className="mb-4 text-sm text-[var(--muted)]"
       >
         Contact
       </motion.p>
@@ -73,13 +74,12 @@ const handleSubmit = async () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
-        style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
-        className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16"
+        className="mb-12 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl"
       >
           Get In Touch.
       </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
 
         <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -88,25 +88,23 @@ const handleSubmit = async () => {
             viewport={{ once: true }}
             className="flex flex-col gap-8"
         >
-            <p style={{fontFamily: 'var(--font-syne)', fontWeight: 700}} className="text-2xl text-[#f0f4ff]">
+            <p className="text-2xl font-bold text-[var(--text)] font-[var(--font-syne)]">
               Got a project in mind?
             </p>
-            <p className="text-[#8899aa] text-sm leading-relaxed">
-              {`Whether you need a Web3 landing page, smart contract development,
-              or clear technical writing for your protocol — I'm open to
-              freelance projects. Let's talk.`}
+            <p className="text-sm leading-relaxed text-[var(--muted)]">
+              Whether you need a Web3 landing page, smart contract development, or clear technical writing for your protocol — I am open to freelance projects.
             </p>
             <div className="flex flex-col gap-4">
               {socials.map((social) => (
-                <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" style={{border: '1px solid var(--border)'}} className="flex items-center gap-4 px-5 py-3 rounded-xl hover:border-[#1e6fff] hover:bg-[#1e6fff]/5 hover:translate-x-2 transition-all duration-300 no-underline group">
-                <span style={{color: 'var(--accent)'}} className="group-hover:scale-110 transition-transform duration-300">
+                <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 rounded-xl border border-[var(--border)] px-5 py-3 transition-all duration-300 hover:translate-x-2 hover:border-[var(--accent)] hover:bg-white">
+                <span className="text-[var(--accent)] transition-transform duration-300 group-hover:scale-110">
                   {social.icon}
                 </span>
                 <div className="flex flex-col">
-                  <span style={{fontFamily: 'var(--font-syne)', fontWeight: 700}} className="text-[#f0f4ff] text-xs uppercase tracking-widest">
+                  <span className="text-xs uppercase tracking-widest text-[var(--text)] font-[var(--font-syne)]">
                     {social.label}
                   </span>
-                  <span className="text-[#8899aa] text-xs group-hover:text-[#1e6fff] transition-colors duration-300">
+                  <span className="text-xs text-[var(--muted)] transition-colors duration-300 group-hover:text-[var(--accent)]">
                     {social.handle}
                   </span>
                 </div>
@@ -122,58 +120,56 @@ const handleSubmit = async () => {
             viewport={{ once: true }}
             className="flex flex-col gap-4"
           >
-
-          
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <label className="text-[#8899aa] text-xs uppercase tracking-widest">Full Name</label>
+              <label className="text-xs uppercase tracking-widest text-[var(--muted)]">Name</label>
               <input
                 type="text"
                 placeholder="Satoshi Nakamoto"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}}
-                className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors"
+                required
+                className="rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text)] outline-none transition-colors focus:border-[var(--accent)]"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-[#8899aa] text-xs uppercase tracking-widest">Email</label>
+              <label className="text-xs uppercase tracking-widest text-[var(--muted)]">Email</label>
               <input
                   type="email"
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)'}}
-                  className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors"
+                  required
+                  className="rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text)] outline-none transition-colors focus:border-[var(--accent)]"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-[#8899aa] text-xs uppercase tracking-widest">Message</label>
+              <label className="text-xs uppercase tracking-widest text-[var(--muted)]">Message</label>
               <textarea 
-                placeholder="Hi Azynar! I came across your portfolio and I'd love to work with you. Could we talk about a project?" 
+                placeholder={messagePlaceholder}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                style={{background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', resize: 'none'}} 
-                className="px-4 py-3 rounded-xl text-sm outline-none focus:border-[#1e6fff] transition-colors h-36" 
+                required
+                className="h-36 resize-none rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text)] outline-none transition-colors focus:border-[var(--accent)]" 
               />
             </div>
             <button
-              onClick={handleSubmit}
+              type="submit"
               disabled={loading || submitted}
-              style={{background: submitted ? '#22c55e' : 'var(--accent)', fontFamily: 'var(--font-syne)', fontWeight: 700}}
-              className="w-full py-3 rounded-xl text-white text-sm uppercase tracking-widest hover:opacity-80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
->
+              className={`w-full rounded-xl py-3 text-sm font-semibold text-white transition-all disabled:cursor-not-allowed disabled:opacity-50 ${submitted ? 'bg-green-500' : 'bg-[var(--accent)] hover:opacity-85'}`}
+            >
               {loading ? 'Sending...' : submitted ? 'Message Sent ✓' : 'Send Message →'}
             </button>
 
             {error && (
-                <p className="text-red-400 text-xs text-center">{error}</p>
+                <p className="text-center text-xs text-red-600">{error}</p>
             )}
+            </form>
             <a 
-              href={`https://wa.me/2347032396032?text=Hi%20Azynar!%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20work%20with%20you.%20Could%20we%20talk%20about%20a%20project%3F`}
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              style={{border: '1px solid var(--border)', fontFamily: 'var(--font-syne)', fontWeight: 700}} 
-              className="w-full py-3 rounded-xl text-[#8899aa] text-sm uppercase tracking-widest hover:border-[#1e6fff] hover:text-[#1e6fff] transition-all no-underline text-center"
+              className="w-full rounded-xl border border-[var(--border)] py-3 text-center text-sm text-[var(--text)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
             >
               Chat on WhatsApp
             </a>

@@ -29,7 +29,7 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
-          style={{background: 'var(--bg)'}}
+          style={{background: 'var(--dark)'}}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-8"
         >
           <motion.h1
@@ -37,12 +37,12 @@ export default function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
-            className="text-4xl md:text-6xl text-[#f0f4ff] tracking-tight"
+            className="text-4xl tracking-tight text-white md:text-6xl"
           >
             Azynar<span style={{color: 'var(--accent)'}}>.</span>
           </motion.h1>
 
-          <div className="w-48 md:w-64 h-px bg-[#1a2a4a] relative overflow-hidden">
+          <div className="relative h-px w-48 overflow-hidden bg-white/20 md:w-64">
             <motion.div
               style={{background: 'var(--accent)', width: `${progress}%`}}
               className="absolute top-0 left-0 h-full transition-all duration-100"
@@ -53,7 +53,7 @@ export default function Preloader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[#8899aa] text-xs uppercase tracking-widest"
+            className="text-xs uppercase tracking-widest text-white/70"
           >
             {progress}%
           </motion.p>

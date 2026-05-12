@@ -1,53 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Image from 'next/image';
-
-const projects = [
-  {
-    number: '01',
-    title: 'Personal Portfolio',
-    desc: 'A clean, modern developer portfolio built with Next.js, Tailwind CSS and Framer Motion. Features a 3D sphere, scroll animations and a blog page.',
-    tags: ['Next.js', 'Tailwind', 'Framer Motion', 'Three.js'],
-    demo: 'https://azynarofweb3.vercel.app',
-    github: 'https://github.com/Azynar/my-portfolio',
-    image: '/portfolio.png',
-    isWriting: false,
-  },
-  {
-  number: '02',
-  title: 'gigSignal Bot',
-  desc: 'A personal Telegram alert bot that monitors Web3 opportunities in real time — new token launches, DeFi protocols, bounties and job postings delivered straight to Telegram.',
-  tags: ['Node.js', 'Telegraf', 'GramJS', 'Web3'],
-  demo: 'https://github.com/Azynar/gigSignal_bot',
-  github: 'https://github.com/Azynar/gigSignal_bot',
-  image: null,
-  isWriting: false,
-  },
-  {
-    number: '03',
-    title: 'Protocol Docs',
-    desc: 'Comprehensive developer documentation for a DeFi protocol — covering architecture, SDK references and integration guides.',
-    tags: ['Technical Writing', 'Docusaurus'],
-    demo: '#',
-    github: '#',
-    image: null,
-    isWriting: true,
-  },
-];
+import Link from 'next/link';
+import projects from '../projects/data';
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-6 md:px-24 py-20 md:py-32">
-      <div style={{maxWidth: '1100px', margin: '0 auto'}}>
-
+    <section id="projects" className="bg-[var(--bg)] px-6 py-20 md:px-24 md:py-28">
+      <div className="mx-auto max-w-6xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-[#8899aa] text-xs uppercase tracking-widest mb-4"
+          className="mb-4 text-sm text-[var(--muted)]"
         >
           Work
         </motion.p>
@@ -57,80 +24,58 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
-          className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16"
+          className="mb-12 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl"
         >
-          {`Things I've Built.`}
+          Things I&apos;ve shipped.
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
-              key={project.number}
+              key={project.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              style={{background: 'var(--surface)', border: '1px solid var(--border)'}}
-              className="rounded-2xl overflow-hidden hover:border-[#1e6fff] transition-all duration-300"
+              className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_8px_28px_rgba(5,10,24,0.05)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[var(--accent)] hover:shadow-[0_14px_34px_rgba(30,111,255,0.12)]"
             >
-              <div style={{background: 'var(--bg)', height: '220px'}} className="w-full overflow-hidden border-b border-[#1a2a4a]">
+              <div className="relative h-52 w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg)]">
                 {project.image ? (
-                    <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover object-top hover:scale-105 transition-transform duration-500"
-                        />
-                    </div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                  />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                      <span style={{fontFamily: 'var(--font-syne)'}} className="text-[#1a2a4a] text-6xl font-extrabold">
-                          {project.number}
-                      </span>
+                  <div className="flex h-full items-center justify-center">
+                    <span className="text-sm text-[var(--muted)]">Image placeholder</span>
                   </div>
-          )}
+                )}
               </div>
 
-              <div className="p-6 flex flex-col gap-4">
-                <h3 style={{fontFamily: 'var(--font-syne)', fontWeight: 700}} className="text-xl text-[#f0f4ff]">
-                  {project.title}
-                </h3>
-                <p className="text-[#8899aa] text-xs leading-relaxed">
-                  {project.desc}
-                </p>
+              <div className="space-y-4 p-6">
+                <span className="inline-flex rounded-full bg-[var(--bg)] px-3 py-1 text-xs text-[var(--accent)]">{project.category}</span>
+                <h3 className="text-xl font-bold text-[var(--text)] font-[var(--font-syne)]">{project.title}</h3>
+                <p className="text-sm leading-relaxed text-[var(--muted)]">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} style={{background: 'var(--border)', color: 'var(--accent2)'}} className="text-xs px-3 py-1 rounded-full tracking-widest">
+                    <span key={tag} className="rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--muted)]">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-3 mt-2">
-                  {project.isWriting ? (
-                    <a href={project.demo} style={{border: '1px solid var(--border)'}} className="flex items-center gap-2 text-[#8899aa] text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:border-[#1e6fff] hover:text-[#1e6fff] transition-all no-underline">
-                      <FiExternalLink size={14} />
-                      Read Article
-                    </a>
-                  ) : (
-                    <>
-                      <a href={project.github} style={{border: '1px solid var(--border)'}} className="flex items-center gap-2 text-[#8899aa] text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:border-[#1e6fff] hover:text-[#1e6fff] transition-all no-underline">
-                        <FiGithub size={14} />
-                        View Project
-                      </a>
-                      <a href={project.demo} className="flex items-center gap-2 bg-[#1e6fff] text-white text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:opacity-80 transition-opacity no-underline">
-                        <FiExternalLink size={14} />
-                        Live Demo
-                      </a>
-                    </>
-                  )}
+                <div className="flex flex-wrap gap-2">
+                  <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-4 py-2 text-xs text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]">
+                    View Details
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -5,73 +5,39 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section id="about" className="px-6 md:px-24 py-20 md:py-32">
-      <div style={{maxWidth: '1100px', margin: '0 auto'}}>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+    <section id="about" className="bg-[var(--bg)] px-6 py-20 md:px-24 md:py-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-[#8899aa] text-xs uppercase tracking-widest mb-4"
+          className="space-y-6"
         >
-          About Me
-        </motion.p>
+          <p className="text-sm text-[var(--muted)]">About</p>
+          <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl">
+            I build and I write.
+          </h2>
+          <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
+            I&apos;m Abdulazeem Badmus — a Computer Science graduate from the University of Ilorin, freelance developer, and technical writer operating as Azynar.
+          </p>
+          <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
+            I&apos;ve built websites for businesses, shipped Telegram bots, written developer documentation, and spent more hours than I should admit reading smart contract audit reports for fun.
+          </p>
+          <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
+            My work sits where code meets communication. Based in Nigeria. Working globally. Always building.
+          </p>
+        </motion.div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
-          className="text-4xl md:text-5xl text-[#f0f4ff] tracking-tight mb-12 md:mb-16"
+          className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white"
         >
-          Who I Am.
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
-            <p className="text-[#8899aa] text-sm leading-relaxed border-l-2 border-[#1e6fff] pl-4">
-              I build clean, functional Web3 products and write technical content that developers actually enjoy reading. My work sits at the intersection of development and communication.
-            </p>
-            <p className="text-[#8899aa] text-sm leading-relaxed">
-              As a Web3 developer and technical writer, I enjoy turning complex blockchain concepts into clear, usable systems and content.
-            </p>
-            <p className="text-[#8899aa] text-sm leading-relaxed">
-              I build landing pages, dApps, and write docs — with the same mindset: clarity, efficiency, and long-term value.
-            </p>
-            <p className="text-[#8899aa] text-sm leading-relaxed">
-              Curious by default and detail-driven by habit, I care deeply about how things look, how they work, and why they exist.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="relative"
-            style={{maxHeight: '500px', overflow: 'hidden'}}
-          >
-            <Image
-              src="/avatar.png"
-              alt="Azynar"
-              width={500}
-              height={500}
-              className="w-full object-cover object-top"
-              style={{filter: 'grayscale(20%)', maxHeight: '500px'}}
-            />
-            <div style={{background: 'linear-gradient(to top, var(--bg), transparent)'}} className="absolute bottom-0 left-0 right-0 h-24"></div>
-          </motion.div>
-
-        </div>
+          <Image src="/avatar.png" alt="Abdulazeem avatar" width={500} height={500} className="h-full w-full object-cover object-top" />
+        </motion.div>
       </div>
     </section>
   );
