@@ -72,6 +72,10 @@ export const metadata = {
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1e6fff' },
     ],
   },
+
+  verification:{
+    google: 'T-Ua_j-CbE8COT87A8_gJrWJ_6x9_Qb3RuPnluF5yzU'
+  },
 };
 
 const jsonLdPerson = {
