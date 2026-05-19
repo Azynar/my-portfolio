@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-[var(--bg)] px-6 py-12 md:px-24 md:py-16 min-h-screen flex items-center">
+    <section id="hero" className="relative overflow-hidden bg-[var(--bg)] px-6 py-12 md:px-24 min-h-screen flex items-center pt-20 md:pt-28">
       <div className="pointer-events-none absolute -top-32 right-0 h-72 w-72 rounded-full bg-[var(--accent)]/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="mx-auto max-w-5xl w-full">
@@ -21,7 +21,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-4 text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--text)] font-[var(--font-syne)] sm:text-4xl md:text-6xl lg:text-7xl"
+          className="mb-4 text-2xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--text)] font-[var(--font-syne)] sm:text-3xl md:text-5xl lg:text-6xl"
         >
           I Build Products That Work.
           <br className="hidden sm:inline" />
