@@ -59,7 +59,6 @@ export default function Navbar() {
             ? 'border-[var(--border)] bg-[var(--surface)]/95 shadow-[0_14px_36px_rgba(5,10,24,0.08)] backdrop-blur-xl'
             : 'border-white/50 bg-[var(--surface)]/75 shadow-[0_6px_20px_rgba(5,10,24,0.04)] backdrop-blur-xl'
         }`}>
-      >
         <div className="flex items-center justify-between">
           <a
             href="#hero"
