@@ -1,4 +1,5 @@
 import { Space_Grotesk, Manrope } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const syne = Space_Grotesk({
@@ -111,6 +112,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body suppressHydrationWarning className={`${syne.variable} ${mono.variable}`}>
         {children}
+        <SpeedInsights />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
