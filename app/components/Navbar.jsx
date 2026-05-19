@@ -69,7 +69,12 @@ export default function Navbar() {
             }}
             className="text-xl font-extrabold font-[var(--font-syne)] text-[var(--text)]"
           >
-            Azynar<span className="text-[var(--accent)]">.</span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-extrabold font-[var(--font-syne)] text-[var(--text)]">
+                Azynar<span className="text-[var(--accent)]">.</span>
+              </span>
+              <span className="text-xs text-[var(--muted)]">I build it. I ship it. I document it.</span>
+            </div>
           </a>
 
           <ul className="hidden items-center gap-7 md:flex">

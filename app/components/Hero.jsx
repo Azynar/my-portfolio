@@ -23,9 +23,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-[var(--text)] font-[var(--font-syne)] md:text-7xl"
         >
-          I Build for the Web.
+          I Build Products That Work.
           <br />
-          I Write for Developers.
+          Then I Write About How They Work.
         </motion.h1>
 
         <motion.p
@@ -34,7 +34,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mb-4 max-w-3xl text-base leading-relaxed text-[var(--muted)] md:text-lg"
         >
-          Full-Stack Developer & Technical Writer specialising in Web2 products, Web3 applications, and developer content that actually gets read.
+          JavaScript developer and technical writer working at the
+          intersection of Web2, Web3, and AI-assisted development.
+          I build fast, ship real things, and document everything clearly.
         </motion.p>
 
         <motion.p
@@ -43,7 +45,10 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mb-10 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
         >
-          I&apos;m Abdulazeem — a Computer Science graduate and freelance developer based in Nigeria, working with startups, small businesses, and Web3 protocols globally. I write code that ships and documentation that developers bookmark.
+          I&apos;m Abdulazeem — a Computer Science graduate from Nigeria
+          building in public and shipping real products. I use JavaScript
+          across the stack with AI tools as part of my workflow, not a
+          replacement for understanding what I&apos;m building.
         </motion.p>
 
         <motion.div
@@ -56,7 +61,7 @@ export default function Hero() {
             See My Work ↓
           </a>
           <a href="/resume" className="rounded-full border border-[var(--border)] bg-white/80 px-6 py-3 text-sm font-semibold text-[var(--text)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]">
-            My Resume →
+            Resume→
           </a>
         </motion.div>
       </div>

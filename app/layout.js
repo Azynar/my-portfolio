@@ -14,13 +14,13 @@ const mono = Manrope({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://azynar.vercel.app'),
+  metadataBase: new URL('https://azynardev.vercel.app'),
   title: {
-    default: 'Azynar — Web3 & Web Developer · Technical Writer',
+    default: 'Abdulazeem Badmus — Azynar · Full-Stack Developer & Technical Writer',
     template: '%s | Azynar',
   },
   description:
-    'Azynar is a developer and technical writer who builds e-commerce stores, business websites, Web3 landing pages and dApps — and writes docs developers actually enjoy reading.',
+    'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
   keywords: [
     'Web3',
     'Web Developer',
@@ -35,14 +35,14 @@ export const metadata = {
     'Business Website',
     'Nigeria',
   ],
-  authors: [{ name: 'Azynar' }],
-  creator: 'Azynar',
+  authors: [{ name: 'Abdulazeem Badmus' }],
+  creator: 'Abdulazeem Badmus',
   openGraph: {
     type: 'website',
-    url: 'https://azynar.vercel.app',
-    title: 'Azynar — Web3 & Web Developer · Technical Writer',
+    url: 'https://azynardev.vercel.app',
+    title: 'Abdulazeem Badmus — Azynar · Full-Stack Developer & Technical Writer',
     description:
-      'Developer and technical writer building web products, Web3 apps, and documentation that engineers actually use.',
+      'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
     siteName: 'Azynar Portfolio',
     images: [
       {
@@ -55,9 +55,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Azynar — Web3 & Web Developer · Technical Writer',
+    title: 'Abdulazeem Badmus — Azynar · Full-Stack Developer & Technical Writer',
     description:
-      'Developer and technical writer building web products, Web3 apps, and documentation that engineers actually use.',
+      'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
     images: ['/avatar.png'],
     creator: '@Azynar01',
   },
@@ -77,17 +77,30 @@ export const metadata = {
 const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: 'Azynar',
-  url: 'https://azynar.vercel.app',
-  image: 'https://azynar.vercel.app/avatar.png',
+  name: 'Abdulazeem Badmus',
+  url: 'https://azynardev.vercel.app',
+  image: 'https://azynardev.vercel.app/avatar.png',
   jobTitle: 'Full-Stack Developer & Technical Writer',
   description:
-    'Developer and technical writer building web products, Web3 apps, and documentation that engineers actually use.',
+    'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
   sameAs: [
     'https://github.com/Azynar',
     'https://twitter.com/Azynar01',
     'https://linkedin.com/in/abdulazeem-badmus-bb748b195',
   ],
+};
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: 'https://azynardev.vercel.app',
+  name: 'Azynar',
+  author: { "@type": "Person", name: 'Abdulazeem Badmus' },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: 'https://azynardev.vercel.app/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
 };
 export default function RootLayout({ children }) {
   return (
@@ -97,7 +110,12 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
-          key="site-jsonld"
+          key="site-jsonld-person"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+          key="site-jsonld-website"
         />
       </body>
     </html>

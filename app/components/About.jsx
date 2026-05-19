@@ -16,16 +16,28 @@ export default function About() {
         >
           <p className="text-sm text-[var(--muted)]">About</p>
           <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl">
-            I build and I write.
+            The person behind the work.
           </h2>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            I&apos;m Abdulazeem Badmus — a Computer Science graduate from the University of Ilorin, freelance developer, and technical writer operating as Azynar.
+            I&apos;m Abdulazeem Badmus — a Computer Science graduate from the
+            University of Ilorin, freelance developer, and technical writer
+            operating as Azynar.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            I&apos;ve built websites for businesses, shipped Telegram bots, written developer documentation, and spent more hours than I should admit reading smart contract audit reports for fun.
+            I use JavaScript across the stack — React, Next.js, Node.js —
+            with AI tools as part of my workflow, not a replacement for
+            understanding what I&apos;m building.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            My work sits where code meets communication. Based in Nigeria. Working globally. Always building.
+            I write developer documentation, technical articles, and
+            protocol content for Web3 projects. Clear writing is part
+            of how I build, not an afterthought.
+          </p>
+          <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
+            Currently focused on Web3 applications, automation tools,
+            and frontend products for startups. Open to collaborations,
+            internships, and freelance work. Based in Nigeria.
+            Working globally. Always building.
           </p>
         </motion.div>
 
