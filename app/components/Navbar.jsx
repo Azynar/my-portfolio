@@ -56,9 +56,9 @@ export default function Navbar() {
         aria-label="Main"
         className={`fixed top-5 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border px-4 py-2 transition-all duration-300 md:px-6 ${
           scrolled
-            ? 'border-[var(--border)] bg-[var(--surface)]/95 shadow-[0_12px_32px_rgba(5,10,24,0.08)] backdrop-blur-xl'
-            : 'border-white/50 bg-[var(--surface)]/75 backdrop-blur-xl'
-        }`}
+            ? 'border-[var(--border)] bg-[var(--surface)]/95 shadow-[0_14px_36px_rgba(5,10,24,0.08)] backdrop-blur-xl'
+            : 'border-white/50 bg-[var(--surface)]/75 shadow-[0_6px_20px_rgba(5,10,24,0.04)] backdrop-blur-xl'
+        }`}>
       >
         <div className="flex items-center justify-between">
           <a
