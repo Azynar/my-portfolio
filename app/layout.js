@@ -46,19 +46,19 @@ export const metadata = {
     siteName: 'Azynar Portfolio',
     images: [
       {
-        url: '/avatar.png',
-        width: 500,
-        height: 500,
-        alt: 'Azynar',
+        url: '/og.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Azynar — Abdulazeem Badmus',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abdulazeem Badmus — Azynar · Full-Stack Developer & Technical Writer',
+    title: 'Azynar — AI-Powered Developer & Technical Writer',
     description:
-      'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
-    images: ['/avatar.png'],
+      'Azynar is an AI-powered JavaScript developer and technical writer helping startups build faster, automate smarter, and document clearly. Based in Nigeria. Working globally.',
+    images: ['/og.svg'],
     creator: '@Azynar01',
   },
   robots: {
@@ -86,7 +86,7 @@ const jsonLdPerson = {
   image: 'https://azynardev.vercel.app/avatar.png',
   jobTitle: 'Full-Stack Developer & Technical Writer',
   description:
-    'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
+    'AI-powered JavaScript developer and technical writer helping startups build faster, automate smarter, and document clearly.',
   sameAs: [
     'https://github.com/Azynar',
     'https://twitter.com/Azynar01',
