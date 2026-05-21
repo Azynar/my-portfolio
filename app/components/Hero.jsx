@@ -21,11 +21,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-4 text-2xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--text)] font-[var(--font-syne)] sm:text-3xl md:text-5xl lg:text-6xl"
+          className="mb-4 text-2xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--text)] font-[var(--font-syne)] sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          I Build Products That Work.
+          I Help Startups Build Faster,
           <br className="hidden sm:inline" />
-          Then I Write About How They Work.
+          Automate Smarter, and Document Clearly.
         </motion.h1>
 
         <motion.p
@@ -34,7 +34,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mb-3 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
         >
-          JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.
+          AI-powered JavaScript developer and technical writer. I use modern AI tools to ship products faster, build automation systems that save time, and write documentation that actually gets read.
         </motion.p>
 
         <motion.p
@@ -43,7 +43,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mb-8 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
         >
-          I&apos;m Abdulazeem — a Computer Science graduate from Nigeria building in public and shipping real products. I use JavaScript across the stack with AI tools as part of my workflow, not a replacement for understanding what I&apos;m building.
+          I&apos;m Abdulazeem — a developer and technical writer who works at the intersection of AI-assisted development, automation, and clear technical communication. Based in Nigeria. Working globally. Always building.
         </motion.p>
 
         <motion.div
@@ -56,7 +56,7 @@ export default function Hero() {
             See My Work ↓
           </a>
           <a href="/resume" className="rounded-full border border-[var(--border)] bg-white/80 px-5 py-3 text-sm font-semibold text-[var(--text)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]">
-            Resume→
+            Resume
           </a>
         </motion.div>
       </div>

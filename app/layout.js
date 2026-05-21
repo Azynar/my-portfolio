@@ -16,33 +16,33 @@ const mono = Manrope({
 export const metadata = {
   metadataBase: new URL('https://azynardev.vercel.app'),
   title: {
-    default: 'Abdulazeem Badmus — Azynar · Full-Stack Developer & Technical Writer',
+    default: 'Azynar — AI-Powered Developer & Technical Writer',
     template: '%s | Azynar',
   },
   description:
-    'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
+    'Azynar is an AI-powered JavaScript developer and technical writer helping startups build faster, automate smarter, and document clearly. Based in Nigeria. Working globally.',
   keywords: [
-    'Web3',
-    'Web Developer',
-    'E-commerce',
-    'Landing Page',
-    'Solidity',
-    'Smart Contracts',
-    'Technical Writing',
+    'AI developer',
+    'automation systems',
+    'technical writer',
+    'JavaScript developer',
     'Next.js',
-    'React',
-    'Blockchain',
-    'Business Website',
+    'Web3 developer',
     'Nigeria',
+    'startup developer',
+    'developer documentation',
+    'Telegram bot',
+    'workflow automation',
+    'freelance developer',
   ],
   authors: [{ name: 'Abdulazeem Badmus' }],
   creator: 'Abdulazeem Badmus',
   openGraph: {
     type: 'website',
     url: 'https://azynardev.vercel.app',
-    title: 'Abdulazeem Badmus — Azynar · Full-Stack Developer & Technical Writer',
+    title: 'Azynar — AI-Powered Developer & Technical Writer',
     description:
-      'JavaScript developer and technical writer working at the intersection of Web2, Web3, and AI-assisted development. I build fast, ship real things, and document everything clearly.',
+      'Azynar is an AI-powered JavaScript developer and technical writer helping startups build faster, automate smarter, and document clearly. Based in Nigeria. Working globally.',
     siteName: 'Azynar Portfolio',
     images: [
       {

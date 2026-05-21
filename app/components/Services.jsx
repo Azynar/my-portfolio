@@ -4,24 +4,24 @@ import { motion } from 'framer-motion';
 
 const services = [
   {
-    title: 'Web Development',
-    body: 'I build landing pages, web apps, and e-commerce\nstores for startups that need to move fast without cutting\ncorners. Stack: React, Next.js, Tailwind CSS, Supabase.',
-    bestFor: 'Early-stage startups, product launches,\nWeb3 project frontends',
-    offerings: ['Landing pages', 'E-commerce stores', 'Business websites', 'Web3 frontends and dApps'],
+    title: 'AI-Assisted Development',
+    body: 'I build web applications and automation systems using AI tools as a core part of the development workflow. Faster delivery, cleaner code, documented from day one. I use AI as leverage — not as a replacement for understanding what I\'m building.',
+    bestFor: 'Startups that need to ship fast without sacrificing quality',
+    offerings: ['Web applications and landing pages', 'E-commerce stores', 'Web3 frontends and dApps', 'Full-stack product development'],
     cta: 'Start a project →',
   },
   {
-    title: 'Smart Contract & Web3 Dev',
-    body: 'I build and document Solidity contracts and\nWeb3 interfaces for projects that need clean code and clear\ndocumentation alongside it. Currently building expertise\nin DeFi primitives.\n\nBest for projects that value a developer who\nlearns fast and documents as they go.',
-    bestFor: 'Projects that value clean code and docs',
-    offerings: ['ERC-20 / ERC-721 contracts', 'Token launch pages', 'dApp development', 'Contract documentation'],
-    cta: 'Discuss your protocol →',
+    title: 'Automation Systems',
+    body: 'I build bots, scrapers, alert systems, and workflow automations that eliminate repetitive manual processes. If your team is doing something manually every day — it can probably be automated.',
+    bestFor: 'Early-stage teams wasting time on repetitive manual tasks',
+    offerings: ['Telegram and Discord bots', 'Data monitoring and alert systems', 'Workflow automation scripts', 'API integrations and scrapers'],
+    cta: 'Automate my workflow →',
   },
   {
-    title: 'Technical Writing',
-    body: 'I write developer docs, API references,\nonboarding guides, and technical articles for\ndeveloper-facing products. I write for developers —\nnot for marketing teams.',
-    bestFor: 'Developer tools, Web3 protocols, SaaS products\nthat need documentation that reduces support tickets.',
-    offerings: ['Developer documentation', 'Protocol whitepapers', 'API references', 'Blog articles and tutorials'],
+    title: 'Technical Writing & Docs',
+    body: 'I write developer documentation, API references, onboarding guides, and technical articles for products that need to communicate complex ideas simply. I write for developers — not for marketing teams.',
+    bestFor: 'Developer tools, Web3 protocols, SaaS products that need documentation that reduces support tickets',
+    offerings: ['Developer documentation', 'Protocol whitepapers', 'API references and guides', 'Blog articles and tutorials'],
     cta: 'Get a writing sample →',
   },
 ];

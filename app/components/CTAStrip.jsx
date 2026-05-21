@@ -16,7 +16,7 @@ export default function CTAStrip() {
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight font-[var(--font-syne)] md:text-4xl">Got a project? Let&apos;s talk.</h2>
           <p className="mt-3 max-w-3xl text-sm text-white/90 md:text-base">
-            Whether you need a website, a smart contract, or documentation that developers will actually read — I&apos;m available and ready.
+            Whether you need a web application, an automation system, or documentation that developers will actually read — I&apos;m available and ready to help.
           </p>
         </div>
         <div className="flex flex-wrap gap-3">

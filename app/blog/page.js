@@ -46,8 +46,7 @@ export default function Blog() {
           The Blog.
         </h1>
         <p className="mb-16 max-w-xl text-sm leading-relaxed text-[var(--muted)]">
-          I write about Web3 development, technical writing, and building
-          products on the blockchain.
+          I write about AI-assisted development, automation systems, Web3 development, and technical communication for developers and startups.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

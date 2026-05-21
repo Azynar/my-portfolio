@@ -24,18 +24,18 @@ export default function About() {
             operating as Azynar.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            I use JavaScript across the stack — React, Next.js, Node.js —
-            with AI tools as part of my workflow, not a replacement for
-            understanding what I&apos;m building.
+            I build web applications and automation tools using JavaScript
+            across the stack — React, Next.js, Node.js — with AI as a core
+            part of my workflow. Not as a shortcut, but as leverage.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            I write developer documentation, technical articles, and
-            protocol content for Web3 projects. Clear writing is part
-            of how I build, not an afterthought.
+            I also write. Developer docs, technical articles, and product
+            content for startups that need their technology explained
+            clearly to users, investors, and developers.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            Currently focused on Web3 applications, automation tools,
-            and frontend products for startups. Open to collaborations,
+            Currently helping startups move faster through AI-assisted
+            development and process automation. Open to collaborations,
             internships, and freelance work. Based in Nigeria.
             Working globally. Always building.
           </p>

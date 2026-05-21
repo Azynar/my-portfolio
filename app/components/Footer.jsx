@@ -19,7 +19,7 @@ export default function Footer() {
             Azynar<span style={{color: 'var(--accent)'}}>.</span>
           </span>
           <span className="text-xs text-white/70">
-            Full-Stack Developer & Technical Writer
+            AI-Powered Developer & Technical Writer
           </span>
         </div>
 

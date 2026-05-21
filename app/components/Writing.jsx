@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 
 const posts = [
   {
-    title: 'Article Title — replace with actual title',
+    title: '[Replace with actual article title]',
     platform: 'Hashnode',
-    description: 'Brief description of what the article covers',
-    tag: 'Web3',
+    description: '[Replace with actual article description]',
+    tag: 'AI & Blockchain',
     link: '#',
   },
   {
-    title: 'Article Title — replace with actual title',
+    title: '[Replace with actual article title]',
     platform: 'Hashnode',
-    description: 'Brief description of what the article covers',
-    tag: 'Blockchain',
+    description: '[Replace with actual article description]',
+    tag: 'Automation',
     link: '#',
   },
   {
-    title: 'Article Title — replace with actual title',
+    title: '[Replace with actual article title]',
     platform: 'Hashnode',
-    description: 'Brief description of what the article covers',
+    description: '[Replace with actual article description]',
     tag: 'Technical Writing',
     link: '#',
   },
@@ -38,7 +38,7 @@ export default function Writing() {
           Developer content worth reading.
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="mb-12 max-w-3xl text-sm text-white/70 md:text-base">
-          I write about Web3 development, smart contract security, and building on the modern web. Published on Hashnode.
+          I write about AI-assisted development, automation systems, Web3 development, and technical communication. Published on Hashnode.
         </motion.p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

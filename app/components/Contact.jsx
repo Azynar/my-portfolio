@@ -92,7 +92,7 @@ export default function Contact() {
               Got a project in mind?
             </p>
             <p className="text-sm leading-relaxed text-[var(--muted)]">
-              Whether you need a Web3 landing page, smart contract development, or clear technical writing for your protocol — I am open to freelance projects.
+              Whether you need a web application, an automation system, or clear technical writing for your product — I&apos;m open to freelance projects and collaborations. Let&apos;s talk.
             </p>
             <div className="flex flex-col gap-4">
               {socials.map((social) => (
