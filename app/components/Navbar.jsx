@@ -116,7 +116,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <div className={`fixed left-1/2 top-20 z-40 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 overflow-hidden rounded-2xl border border-[var(--border)] bg-white/95 p-4 backdrop-blur-xl transition-all duration-300 md:hidden ${isOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0'}`}>
+      <div className={`fixed left-1/2 top-20 z-40 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 overflow-hidden rounded-2xl border border-[var(--border)] bg-white/95 p-4 backdrop-blur-xl transition-transform transition-opacity duration-300 ease-out md:hidden ${isOpen ? 'pointer-events-auto translate-y-0 scale-100 opacity-100' : 'pointer-events-none -translate-y-6 scale-95 opacity-0'}`} aria-hidden={!isOpen}>
         <div className="flex flex-col gap-2">
           {navLinks.map((link) => (
             <button

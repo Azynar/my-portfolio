@@ -21,7 +21,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-4 text-2xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--text)] font-[var(--font-syne)] sm:text-4xl md:text-5xl lg:text-6xl"
+          className="mb-6 text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[var(--text)] font-[var(--font-syne)] sm:text-4xl md:text-5xl lg:text-6xl"
         >
           I Help Startups Build Faster,
           <br className="hidden sm:inline" />
@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="mb-3 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
+          className="mb-6 md:mb-3 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
         >
           AI-powered JavaScript developer and technical writer. I use modern AI tools to ship products faster, build automation systems that save time, and write documentation that actually gets read.
         </motion.p>
@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-8 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
+          className="mb-10 md:mb-8 max-w-3xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
         >
           I&apos;m Abdulazeem — a developer and technical writer who works at the intersection of AI-assisted development, automation, and clear technical communication. Based in Nigeria. Working globally. Always building.
         </motion.p>
