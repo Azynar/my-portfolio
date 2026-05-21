@@ -68,11 +68,10 @@ export default function Navbar() {
             }}
             className="text-xl font-extrabold font-[var(--font-syne)] text-[var(--text)]"
           >
-            <div className="flex flex-col leading-tight">
+            <div className="flex items-center leading-tight">
               <span className="text-xl font-extrabold font-[var(--font-syne)] text-[var(--text)]">
                 Azynar<span className="text-[var(--accent)]">.</span>
               </span>
-              <span className="text-xs text-[var(--muted)]">I build it. I automate it. I document it.</span>
             </div>
           </a>
 
@@ -83,7 +82,7 @@ export default function Navbar() {
                   onClick={() => scrollToSection(link.id)}
                   className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
                 >
-                    <span className="text-xs text-[var(--muted)]">I build it. I automate it. I document it.</span>
+                  {link.label}
                 </button>
               </li>
             ))}
