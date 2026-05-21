@@ -56,7 +56,7 @@ export default function Hero() {
             See My Work ↓
           </a>
           <a href="/resume" className="rounded-full border border-[var(--border)] bg-white/80 px-5 py-3 text-sm font-semibold text-[var(--text)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]">
-            Resume
+            Resume →
           </a>
         </motion.div>
       </div>
