@@ -21,9 +21,9 @@ const projects = [
     problem: 'Make Web3 approachable for a regional audience.',
     solution: 'Styled copy, clear CTAs and educational sections to lower friction for newcomers.',
     tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
-    demo: '#',
-    github: '#',
-    image: null,
+    demo: 'https://azynar.github.io/naija-memecoin/',
+    github: 'https://github.com/Azynar/naija-memecoin/',
+    image: '/naija-memecoin.png',
   },
   {
     slug: 'gigsignal-bot',
