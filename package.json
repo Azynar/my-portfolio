@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "eslint . --fix",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@types/three": "^0.183.1",
