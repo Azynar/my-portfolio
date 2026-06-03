@@ -21,7 +21,7 @@ export default function Home() {
       <Stats />
       <Services />
       <Projects />
-      <Writing />
+      {/* <Writing /> */}
       <Process />
       <CTAStrip />
       <Contact />
