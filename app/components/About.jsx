@@ -48,7 +48,7 @@ export default function About() {
           viewport={{ once: true }}
           className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white"
         >
-          <Image src="/avatar.png" alt="Abdulazeem avatar" width={500} height={500} className="h-full w-full object-cover object-top" />
+          <Image src="/Abdulazeem.png" alt="Abdulazeem avatar" width={500} height={500} className="h-full w-full object-cover object-top" />
         </motion.div>
       </div>
     </section>

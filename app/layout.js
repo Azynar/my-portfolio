@@ -24,7 +24,7 @@ export const metadata = {
     "Full Stack Developer and Technical Writer based in Nigeria. I build AI-powered web apps, Web3 interfaces, and automation tools using Next.js, React, and Node.js. Open to remote roles and freelance projects.",
   keywords: [
     "full stack developer Nigeria",
-    "web developer Ilorin",
+    "web developer Nigeria",
     "AI developer Nigeria",
     "technical writer Web3",
     "Next.js developer Nigeria",
