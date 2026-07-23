@@ -140,7 +140,7 @@ export default function Navbar() {
             }}
             className="mt-2 rounded-lg bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white"
           >
-            Hire Me {'->'}
+            Hire Me →
           </button>
         </div>
       </div>

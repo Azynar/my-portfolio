@@ -76,7 +76,7 @@ export default function Contact() {
         viewport={{ once: true }}
         className="mb-12 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl"
       >
-          Get In Touch.
+          Get In <span className="text-[var(--accent)]">Touch</span>.
       </motion.h2>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
@@ -92,7 +92,7 @@ export default function Contact() {
               Got a project in mind?
             </p>
             <p className="text-sm leading-relaxed text-[var(--muted)]">
-              Whether you need a web application, an automation system, or clear technical writing for your product — I&apos;m open to freelance projects and collaborations. Let&apos;s talk.
+              Whether it&apos;s a web app that needs building or a manual process that needs automating — I&apos;m open to freelance projects and collaborations. Let&apos;s talk.
             </p>
             <div className="flex flex-col gap-4">
               {socials.map((social) => (

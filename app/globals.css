@@ -6,9 +6,9 @@
   --surface: #fdfdfb;
   --surface-2: #f2f4f8;
   --dark: #050a18;
-  --accent: #1e6fff;
+  --accent: #1b5fe0;
+  --muted: #57606e;
   --text: #0a0a0a;
-  --muted: #6b7280;
   --border: #e5e7eb;
 }
 
@@ -19,7 +19,12 @@ html {
 body {
   background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 55%);
   color: var(--text);
-  font-family: var(--font-mono), sans-serif;
+  font-family: var(--font-body), sans-serif;
+}
+
+::selection {
+  background: rgba(27, 95, 224, 0.18);
+  color: var(--text);
 }
 
 /* Smoothly animate theme changes for properties that use CSS variables */

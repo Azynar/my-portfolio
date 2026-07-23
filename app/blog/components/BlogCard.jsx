@@ -30,7 +30,7 @@ export default function BlogCard({ article }) {
       </div>
 
       <div className="flex items-center justify-between mt-2">
-        <span className="text-xs text-[var(--muted)]">{article.date}</span>
+        <span className="text-xs text-[var(--muted)]">{article.date} · {article.readTime}</span>
         <FiExternalLink size={14} className="text-[var(--muted)] transition-colors duration-300 group-hover:text-[var(--accent)]" />
       </div>
 

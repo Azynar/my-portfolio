@@ -19,7 +19,7 @@ export default function Footer() {
             Azynar<span style={{color: 'var(--accent)'}}>.</span>
           </span>
           <span className="text-xs text-white/70">
-            AI-Powered Developer & Technical Writer
+            Full-Stack Web Developer
           </span>
         </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
         </a>
       </motion.div>
       <p className="mx-auto mt-8 max-w-6xl text-xs text-white/50">
-        © 2026 Abdulazeem Badmus. Built with Next.js & Tailwind.
+        © 2026 Abdulazeem Badmus. All rights reserved.
       </p>
     </footer>
   );

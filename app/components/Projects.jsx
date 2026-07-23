@@ -26,7 +26,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-12 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl"
         >
-          Things I&apos;ve shipped.
+          Things I&apos;ve <span className="text-[var(--accent)]">shipped</span>.
         </motion.h2>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -37,7 +37,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_8px_28px_rgba(5,10,24,0.05)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[var(--accent)] hover:shadow-[0_14px_34px_rgba(30,111,255,0.12)]"
+              className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_8px_28px_rgba(5,10,24,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-[var(--accent)] hover:shadow-[0_20px_44px_rgba(30,111,255,0.14)]"
             >
               <div className="relative h-52 w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg)]">
                 {project.image ? (
@@ -47,7 +47,7 @@ export default function Projects() {
                     fill
                     loading={index === 0 ? 'eager' : 'lazy'}
                     sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                    className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center">
@@ -57,7 +57,12 @@ export default function Projects() {
               </div>
 
               <div className="space-y-4 p-6">
-                <span className="inline-flex rounded-full bg-[var(--bg)] px-3 py-1 text-xs text-[var(--accent)]">{project.category}</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex rounded-full bg-[var(--bg)] px-3 py-1 text-xs text-[var(--accent)]">{project.category}</span>
+                  {project.status && (
+                    <span className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-xs text-amber-700 border border-amber-200">{project.status}</span>
+                  )}
+                </div>
                 <h3 className="text-xl font-bold text-[var(--text)] font-[var(--font-syne)]">{project.title}</h3>
                 <p className="text-sm leading-relaxed text-[var(--muted)]">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
@@ -76,6 +81,19 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-10 text-center text-sm text-[var(--muted)]"
+        >
+          More shipping soon — follow the build on{' '}
+          <a href="https://github.com/Azynar" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
+            GitHub →
+          </a>
+        </motion.p>
       </div>
     </section>
   );

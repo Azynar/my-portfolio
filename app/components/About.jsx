@@ -16,28 +16,23 @@ export default function About() {
         >
           <p className="text-sm text-[var(--muted)]">About</p>
           <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl">
-            The person behind the work.
+            From <span className="text-[var(--accent)]">learning</span> to <span className="text-[var(--accent)]">shipping</span>.
           </h2>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
             I&apos;m Abdulazeem Badmus — a Computer Science graduate from the
-            University of Ilorin, freelance developer, and technical writer
-            operating as Azynar.
+            University of Ilorin, building as Azynar. I design, build,
+            and ship products end-to-end, from the interface to the backend.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            I build web applications and automation tools using JavaScript
-            across the stack — React, Next.js, Node.js — with AI as a core
-            part of my workflow. Not as a shortcut, but as leverage.
+            My work spans React, Next.js, Node.js, and AI-assisted
+            workflows. The goal is simple: turn ideas into live products
+            that are useful, fast, and reliable.
           </p>
           <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            I also write. Developer docs, technical articles, and product
-            content for startups that need their technology explained
-            clearly to users, investors, and developers.
-          </p>
-          <p className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
-            Currently helping startups move faster through AI-assisted
-            development and process automation. Open to collaborations,
-            internships, and freelance work. Based in Nigeria.
-            Working globally. Always building.
+            Over the last three years, I&apos;ve shipped projects across
+            websites, automation tools, and product-style builds for
+            startups and businesses that needed momentum without the usual
+            overhead.
           </p>
         </motion.div>
 

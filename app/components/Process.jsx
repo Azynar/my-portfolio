@@ -33,7 +33,7 @@ export default function Process() {
           How I Work
         </motion.p>
         <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-12 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-5xl">
-          No surprises. Just results.
+          No surprises. Just <span className="text-[var(--accent)]">results</span>.
         </motion.h2>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
@@ -44,7 +44,7 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_8px_28px_rgba(5,10,24,0.05)] transition-all duration-500 hover:-translate-y-1 hover:border-[var(--accent)]"
+              className="group rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_8px_28px_rgba(5,10,24,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-[var(--accent)] hover:shadow-[0_18px_38px_rgba(30,111,255,0.12)]"
             >
               <p className="mb-2 text-lg font-extrabold text-[var(--accent)] font-[var(--font-syne)]">{step.number}</p>
               <h3 className="mb-2 text-lg font-bold text-[var(--text)]">{step.title}</h3>

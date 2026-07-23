@@ -5,21 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => setLoading(false), 400);
-          return 100;
-        }
-        return prev + 2;
-      });
-    }, 30);
-
-    return () => clearInterval(interval);
+    const timer = setTimeout(() => setLoading(false), 1100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -29,34 +18,25 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
-          style={{background: 'var(--dark)'}}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-8"
+          style={{ background: 'var(--dark)' }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
         >
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{fontFamily: 'var(--font-syne)', fontWeight: 800}}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            style={{ fontFamily: 'var(--font-syne)', fontWeight: 800 }}
             className="text-4xl tracking-tight text-white md:text-6xl"
           >
-            Azynar<span style={{color: 'var(--accent)'}}>.</span>
-          </motion.h1>
-
-          <div className="relative h-px w-48 overflow-hidden bg-white/20 md:w-64">
-            <motion.div
-              style={{background: 'var(--accent)', width: `${progress}%`}}
-              className="absolute top-0 left-0 h-full transition-all duration-100"
-            />
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xs uppercase tracking-widest text-white/70"
-          >
-            {progress}%
-          </motion.p>
+            <motion.span
+              initial={{ clipPath: 'inset(0 100% 0 0)' }}
+              animate={{ clipPath: 'inset(0 0% 0 0)' }}
+              transition={{ duration: 1.05, ease: 'easeOut' }}
+              className="inline-block whitespace-nowrap"
+            >
+              Azynar<span style={{ color: 'var(--accent)' }}>.</span>
+            </motion.span>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
