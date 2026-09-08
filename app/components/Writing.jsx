@@ -1,37 +1,47 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiExternalLink } from 'react-icons/fi';
+import Link from 'next/link';
+import { FiExternalLink, FiArrowRight } from 'react-icons/fi';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const posts = [
   {
     title: 'AI is Smart. Blockchain is Honest. Here\'s What Happens When They Work Together.',
+    summary: 'A technical deep-dive into how decentralized cryptographic ledgers and automated systems complement each other to verify synthetic data.',
     readTime: '9 min read',
+    tags: ['Architecture', 'System Design'],
     link: 'https://azynar.hashnode.dev/ai-is-smart-blockchain-is-honest-here-s-what-happens-when-they-work-together',
   },
   {
     title: 'AI Coding in 2026: What Actually Breaks in Production',
+    summary: 'An unfiltered analysis of developer tooling, context limits, subtle security bugs, and what engineering leaders must guard against.',
     readTime: '12 min read',
+    tags: ['Production', 'Engineering', 'Security'],
     link: 'https://azynar.hashnode.dev/beyond-the-vibe-what-ai-coding-actually-looks-like-in-2026',
   },
 ];
 
 export default function Writing() {
   return (
-    <section id="writing" className="relative overflow-hidden bg-[var(--dark)] px-6 py-20 md:px-24 md:py-28">
-      <div className="pointer-events-none absolute left-0 top-0 h-72 w-72 rounded-full bg-[var(--accent)]/15 blur-3xl" />
-      <div className="mx-auto max-w-4xl">
-        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-4 text-sm text-white/70">
-          Writing
-        </motion.p>
-        <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-5 text-3xl font-extrabold tracking-tight text-white font-[var(--font-syne)] md:text-5xl">
-          Developer content worth <span className="text-[var(--accent)]">reading</span>.
-        </motion.h2>
-        <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="mb-10 max-w-2xl text-sm text-white/70 md:text-base">
-          I write about AI, Web3, and what it actually looks like to build real things. Published on Hashnode.
-        </motion.p>
+    <section id="writing" className="bg-[var(--bg)] px-6 py-20 md:px-24 md:py-24 border-t border-[var(--border)]">
+      <div className="mx-auto max-w-5xl">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] font-[var(--font-syne)]">
+              Technical Insights &amp; Essays
+            </span>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
+              Thoughts on <span className="text-[var(--accent)]">modern engineering</span>.
+            </h2>
+          </div>
+          <p className="mt-3 max-w-md text-xs text-[var(--muted)] sm:text-sm md:mt-0">
+            I write about what works, what breaks, and architectural tradeoffs in modern web development.
+          </p>
+        </div>
 
-        <div className="flex flex-col divide-y divide-white/10 border-y border-white/10">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {posts.map((post, index) => (
             <motion.a
               key={post.link}
@@ -42,22 +52,52 @@ export default function Writing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group flex items-center justify-between gap-4 py-5 transition-colors hover:text-[var(--accent)]"
+              className="group flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-xs transition-all hover:border-[var(--text)]/20"
             >
               <div>
-                <h3 className="text-base font-bold text-white transition-colors group-hover:text-[var(--accent)] font-[var(--font-syne)] md:text-lg">
+                <div className="flex items-center justify-between mb-3.5">
+                  <Badge variant="outline" className="text-[10px]">
+                    Hashnode Article
+                  </Badge>
+                  <span className="text-[11px] text-[var(--muted)]">{post.readTime}</span>
+                </div>
+
+                <h3 className="text-base font-bold text-[var(--text)] font-[var(--font-syne)] transition-colors group-hover:text-[var(--accent)]">
                   {post.title}
                 </h3>
-                <p className="mt-1 text-xs text-white/50">{post.readTime}</p>
+
+                <p className="mt-2 text-xs leading-relaxed text-[var(--muted)]">
+                  {post.summary}
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-1">
+                  {post.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-2 py-0.5 font-mono text-[9px] text-[var(--muted)]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <FiExternalLink size={16} className="shrink-0 text-white/40 transition-colors group-hover:text-[var(--accent)]" />
+
+              <div className="mt-5 flex items-center justify-between border-t border-[var(--border)] pt-3.5 text-xs font-semibold text-[var(--accent)]">
+                <span>Read Full Article</span>
+                <FiExternalLink size={12} className="transition-transform group-hover:translate-x-0.5" />
+              </div>
             </motion.a>
           ))}
         </div>
 
-        <a href="/blog" className="mt-10 inline-flex text-sm font-semibold text-white transition-colors hover:text-[var(--accent)]">
-          View all articles →
-        </a>
+        <div className="mt-8 text-center">
+          <Link href="/blog">
+            <Button variant="outline" size="sm" className="gap-1.5 rounded-full px-5 text-xs">
+              <span>View All Blog Articles</span>
+              <FiArrowRight size={12} />
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );

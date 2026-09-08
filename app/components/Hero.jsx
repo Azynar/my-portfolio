@@ -2,107 +2,169 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FiArrowDown, FiDownload, FiArrowRight, FiTerminal } from 'react-icons/fi';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 export default function Hero() {
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden bg-[var(--bg)] px-6 py-10 pt-20 md:px-24 md:py-12 md:pt-28">
-      <div className="pointer-events-none absolute -top-32 right-0 h-72 w-72 rounded-full bg-[var(--accent)]/10 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-blue-200/30 blur-3xl" />
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
-        
+    <section
+      id="hero"
+      className="relative flex min-h-[88vh] items-center bg-[var(--bg)] px-6 pt-28 pb-16 md:px-24 md:pt-36 md:pb-24"
+    >
+      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-14">
         <div>
+          {/* Status Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 inline-flex items-center rounded-full border border-green-200 bg-green-50 px-4 py-2"
+            transition={{ duration: 0.4 }}
+            className="mb-5 inline-flex"
           >
-            <span className="text-sm text-green-700">● Available for freelance projects</span>
+            <Badge variant="success" className="gap-2 px-3 py-1">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="text-[11px] font-medium tracking-wide">
+                Available for Freelance &amp; Contract Work
+              </span>
+            </Badge>
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="mb-4 text-xs uppercase tracking-[0.32em] text-[var(--accent)] font-[var(--font-syne)]"
+            transition={{ duration: 0.4, delay: 0.08 }}
+            className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--muted)] font-[var(--font-syne)]"
           >
-            Abdulazeem Babatunde Badmus — Building as Azynar
+            Abdulazeem Badmus · Building as Azynar
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6 max-w-3xl text-4xl font-extrabold leading-[0.96] tracking-[-0.04em] text-[var(--text)] font-[var(--font-syne)] sm:text-5xl md:text-6xl"
+            transition={{ duration: 0.5, delay: 0.12 }}
+            className="mb-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-5xl md:text-6xl"
           >
-            I build <span className="text-[var(--accent)]">modern websites</span> and software that help <span className="text-[var(--accent)]">businesses grow</span>.
+            I turn ideas into <span className="text-[var(--accent)]">shipped web products</span> that deliver results.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mb-8 max-w-2xl text-sm leading-relaxed text-[var(--muted)] md:text-base"
+            transition={{ duration: 0.5, delay: 0.18 }}
+            className="mb-8 max-w-lg text-sm leading-relaxed text-[var(--muted)] sm:text-base"
           >
-            I design and ship fast, reliable web experiences and automation tools that help businesses move from idea to execution.
+            Web developer building responsive, fast user interfaces with React, Next.js, TypeScript, and Tailwind CSS—growing towards full-stack with Node.js, Supabase, and REST API integrations.
           </motion.p>
 
+          {/* Metric Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="mb-10 grid grid-cols-3 gap-4 max-w-md"
+            transition={{ duration: 0.5, delay: 0.24 }}
+            className="mb-8 grid max-w-md grid-cols-3 gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-xs"
           >
             <div>
-              <p className="text-2xl font-bold text-[var(--text)] font-[var(--font-syne)]">3+</p>
-              <p className="text-xs text-[var(--muted)]">Years Building</p>
+              <p className="text-xl font-bold text-[var(--text)] font-[var(--font-syne)]">3+ Yrs</p>
+              <p className="text-[11px] text-[var(--muted)]">Shipping Code</p>
+            </div>
+            <div className="border-x border-[var(--border)] px-3">
+              <p className="text-xl font-bold text-[var(--accent)] font-[var(--font-syne)]">&lt; 48h</p>
+              <p className="text-[11px] text-[var(--muted)]">Sprint Response</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-[var(--text)] font-[var(--font-syne)]">5+</p>
-              <p className="text-xs text-[var(--muted)]">Projects Shipped</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-[var(--text)] font-[var(--font-syne)]">100%</p>
-              <p className="text-xs text-[var(--muted)]">Remote Ready</p>
+              <p className="text-xl font-bold text-[var(--text)] font-[var(--font-syne)]">100%</p>
+              <p className="text-[11px] text-[var(--muted)]">IP Handover</p>
             </div>
           </motion.div>
 
+          {/* Action CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.65 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap items-center gap-3"
           >
-            <a href="#contact" className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(30,111,255,0.25)] transition-all duration-500 hover:-translate-y-0.5 hover:opacity-90">
-              Hire Me
-            </a>
-            <a href="#projects" className="rounded-full border border-[var(--border)] bg-white/80 px-5 py-3 text-sm font-semibold text-[var(--text)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]">
-              View Projects
-            </a>
-            <a href="/Abdulazeem-Badmus.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-[var(--accent)] underline underline-offset-4 hover:opacity-80">
-              Resume →
+            <Button
+              size="lg"
+              onClick={() => scrollTo('contact')}
+              className="rounded-full px-6 font-semibold"
+            >
+              <span>Let&apos;s Build Together</span>
+              <FiArrowRight size={14} />
+            </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => scrollTo('projects')}
+              className="rounded-full px-6 font-semibold"
+            >
+              <span>Explore Projects</span>
+            </Button>
+
+            <a
+              href="/Abdulazeem-Badmus.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-[var(--muted)] transition-colors hover:text-[var(--text)]"
+            >
+              <FiDownload size={13} />
+              <span>CV / Resume</span>
             </a>
           </motion.div>
         </div>
 
+        {/* Hero Visual Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="relative mx-auto w-full max-w-sm lg:max-w-none"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="relative mx-auto w-full max-w-sm lg:max-w-md"
         >
-          <div className="relative aspect-square overflow-hidden rounded-3xl border border-[var(--border)] bg-white/50">
-            <Image
-              src="/avatar.png"
-              alt="Abdulazeem Badmus (Azynar), web developer"
-              fill
-              className="object-cover"
-              priority
-            />
+          {/* Avatar Card */}
+          <div className="relative aspect-square overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-2 shadow-md">
+            <div className="relative h-full w-full overflow-hidden rounded-xl bg-[var(--surface-2)]">
+              <Image
+                src="/avatar.png"
+                alt="Abdulazeem Badmus (Azynar), Web Developer"
+                fill
+                sizes="(max-width: 1024px) 100vw, 420px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Stack summary pill */}
+          <div className="mt-3 flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 shadow-xs">
+            <div className="flex items-center gap-2 text-xs text-[var(--muted)]">
+              <FiTerminal size={14} className="text-[var(--accent)]" />
+              <span className="font-mono text-[11px] text-[var(--text)]">React · Next.js · Node.js</span>
+            </div>
+            <span className="rounded-md bg-[var(--surface-2)] px-2 py-0.5 font-mono text-[10px] text-[var(--muted)]">
+              TypeScript &amp; Supabase
+            </span>
           </div>
         </motion.div>
-
       </div>
+
+      {/* Scroll Down */}
+      <button
+        onClick={() => scrollTo('about')}
+        aria-label="Scroll to About section"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1 text-[11px] font-medium text-[var(--muted)] transition-colors hover:text-[var(--text)]"
+      >
+        <span>Scroll</span>
+        <FiArrowDown size={12} />
+      </button>
     </section>
   );
 }

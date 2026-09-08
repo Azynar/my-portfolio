@@ -2,37 +2,39 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { HiOutlineMenuAlt3, HiX } from 'react-icons/hi';
+import { FiSun, FiMoon, FiArrowRight } from 'react-icons/fi';
+import { useTheme } from './ThemeProvider';
+import { Button } from '@/components/ui/button';
 
 const navLinks = [
   { id: 'about', label: 'About' },
-  { id: 'services', label: 'Services' },
   { id: 'projects', label: 'Projects' },
-  { id: 'writing', label: 'Writing' },
+  { id: 'stack', label: 'Stack' },
   { id: 'contact', label: 'Contact' },
 ];
-
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const { theme, toggleTheme, mounted } = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    // Close on Escape
     function onKey(e) {
       if (e.key === 'Escape') setIsOpen(false);
     }
@@ -41,7 +43,6 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Lock body scroll when mobile menu is open
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -49,99 +50,173 @@ export default function Navbar() {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isHome) return;
+
+    const sections = navLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((e) => e.isIntersecting);
+        if (visible) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      { rootMargin: '-30% 0px -40% 0px', threshold: 0.1 }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [isHome]);
+
+  const handleNavClick = (id) => {
+    setIsOpen(false);
+    if (isHome) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push(`/#${id}`);
+    }
+  };
+
   return (
     <>
       <nav
         role="navigation"
-        aria-label="Main"
-        className={`fixed top-5 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border px-4 py-2 transition-all duration-300 md:px-6 ${
+        aria-label="Main Navigation"
+        className={`fixed top-4 left-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 rounded-full border px-4 py-2 transition-all duration-200 md:px-5 ${
           scrolled
-            ? 'border-[var(--border)] bg-[var(--surface)]/95 shadow-[0_14px_36px_rgba(5,10,24,0.08)] backdrop-blur-xl'
-            : 'border-white/50 bg-[var(--surface)]/75 shadow-[0_6px_20px_rgba(5,10,24,0.04)] backdrop-blur-xl'
-        }`}>
+            ? 'border-[var(--border)] bg-[var(--surface)]/90 shadow-md backdrop-blur-md'
+            : 'border-[var(--border)]/70 bg-[var(--surface)]/70 shadow-xs backdrop-blur-sm'
+        }`}
+      >
         <div className="flex items-center justify-between">
-          <a
-            href="#hero"
+          <Link
+            href="/"
             onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('hero');
+              if (isHome) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
             }}
-            className="text-xl font-extrabold font-[var(--font-syne)] text-[var(--text)]"
+            className="group flex items-center gap-2.5"
           >
-            <div className="flex items-center leading-tight">
-              <span className="text-xl font-extrabold font-[var(--font-syne)] text-[var(--text)]">
-                Azynar<span className="text-[var(--accent)]">.</span>
-              </span>
+            <div className="relative h-7 w-7 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface-2)]">
+              <Image src="/avatar.png" alt="Azynar" fill sizes="28px" className="object-cover" priority />
             </div>
-          </a>
+            <span className="text-base font-bold font-[var(--font-syne)] tracking-tight text-[var(--text)]">
+              Azynar<span className="text-[var(--accent)]">.</span>
+            </span>
+          </Link>
 
-          <ul className="hidden items-center gap-7 md:flex">
-            {navLinks.map((link) => (
-              <li key={link.id}>
-                <button
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
+          {/* Focused Core Nav Links */}
+          <ul className="hidden items-center gap-6 md:flex">
+            {navLinks.map((link) => {
+              const isActive = isHome && activeSection === link.id;
+              return (
+                <li key={link.id}>
+                  <button
+                    onClick={() => handleNavClick(link.id)}
+                    className={`text-xs font-medium transition-colors hover:text-[var(--text)] ${
+                      isActive ? 'text-[var(--accent)] font-semibold' : 'text-[var(--muted)]'
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
 
-          <div className="hidden items-center gap-2 md:flex">
-            <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="overflow-hidden rounded-full border border-[var(--border)]">
-              <Image src="/avatar.png" alt="Azynar avatar" width={34} height={34} className="h-8 w-8 object-cover" />
-            </a>
-            <a href="/blog" className="rounded-full border border-[var(--border)] bg-white/80 px-4 py-2 text-xs font-semibold text-[var(--text)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]">
+          <div className="hidden items-center gap-2.5 md:flex">
+            <Link
+              href="/blog"
+              className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors hover:text-[var(--text)] ${
+                pathname === '/blog'
+                  ? 'bg-[var(--surface-2)] text-[var(--accent)] font-semibold'
+                  : 'text-[var(--muted)]'
+              }`}
+            >
               Blog
-            </a>
-            <button onClick={() => scrollToSection('contact')} className="rounded-full bg-[var(--accent)] px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-85">
-              Hire Me →
-            </button>
+            </Link>
+
+            <Button
+              size="sm"
+              onClick={() => handleNavClick('contact')}
+              className="rounded-full px-4 text-xs font-semibold"
+            >
+              <span>Get in Touch</span>
+              <FiArrowRight size={12} />
+            </Button>
+
+            {mounted && (
+              <button
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-2)] text-[var(--muted)] transition-colors hover:text-[var(--text)] hover:border-[var(--text)]/30"
+              >
+                {theme === 'dark' ? <FiSun size={14} /> : <FiMoon size={14} />}
+              </button>
+            )}
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
-            <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="overflow-hidden rounded-full border border-[var(--border)]">
-              <Image src="/avatar.png" alt="Azynar avatar" width={34} height={34} className="h-8 w-8 object-cover" />
-            </a>
+            {mounted && (
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-2)] text-[var(--muted)]"
+              >
+                {theme === 'dark' ? <FiSun size={14} /> : <FiMoon size={14} />}
+              </button>
+            )}
             <button
               onClick={() => setIsOpen((prev) => !prev)}
               aria-label="Toggle menu"
               aria-expanded={isOpen}
-              className="rounded-full border border-[var(--border)] p-2 text-[var(--text)]"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-2)] text-[var(--text)]"
             >
-              {isOpen ? <HiX size={20} /> : <HiOutlineMenuAlt3 size={20} />}
+              {isOpen ? <HiX size={16} /> : <HiOutlineMenuAlt3 size={16} />}
             </button>
           </div>
         </div>
       </nav>
 
-      <div className={`fixed left-1/2 top-20 z-40 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 overflow-hidden rounded-2xl border border-[var(--border)] bg-white/95 p-4 backdrop-blur-xl transition-transform transition-opacity duration-300 ease-out md:hidden ${isOpen ? 'pointer-events-auto translate-y-0 scale-100 opacity-100' : 'pointer-events-none -translate-y-6 scale-95 opacity-0'}`} aria-hidden={!isOpen}>
-        <div className="flex flex-col gap-2">
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed left-1/2 top-18 z-40 w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-xl backdrop-blur-xl transition-all duration-200 ease-out md:hidden ${
+          isOpen
+            ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
+            : 'pointer-events-none -translate-y-4 scale-95 opacity-0'
+        }`}
+        aria-hidden={!isOpen}
+      >
+        <div className="flex flex-col gap-1">
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => {
-                scrollToSection(link.id);
-                setIsOpen(false);
-              }}
-              className="rounded-lg px-3 py-2 text-left text-sm text-[var(--text)] transition-colors hover:bg-[var(--bg)] hover:text-[var(--accent)]"
+              onClick={() => handleNavClick(link.id)}
+              className="rounded-lg px-3 py-2 text-left text-xs font-medium text-[var(--text)] transition-colors hover:bg-[var(--surface-2)]"
             >
               {link.label}
             </button>
           ))}
-          <a href="/blog" className="rounded-lg px-3 py-2 text-sm text-[var(--text)] transition-colors hover:bg-[var(--bg)] hover:text-[var(--accent)]">
-            Blog
-          </a>
-          <button
-            onClick={() => {
-              scrollToSection('contact');
-              setIsOpen(false);
-            }}
-            className="mt-2 rounded-lg bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white"
+          <Link
+            href="/blog"
+            onClick={() => setIsOpen(false)}
+            className="rounded-lg px-3 py-2 text-left text-xs font-medium text-[var(--text)] transition-colors hover:bg-[var(--surface-2)]"
           >
-            Hire Me →
-          </button>
+            Blog
+          </Link>
+          <Button
+            size="sm"
+            onClick={() => handleNavClick('contact')}
+            className="mt-2 w-full rounded-xl py-2.5 text-xs font-semibold"
+          >
+            <span>Get in Touch</span>
+            <FiArrowRight size={12} />
+          </Button>
         </div>
       </div>
     </>

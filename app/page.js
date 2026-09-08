@@ -1,29 +1,27 @@
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Services from './components/Services';
 import Projects from './components/Projects';
+import TechStack from './components/TechStack';
+import Services from './components/Services';
 import Writing from './components/Writing';
 import Process from './components/Process';
 import CTAStrip from './components/CTAStrip';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg)]">
       <Preloader />
-      <Navbar />
       <Hero />
       <About />
-      <Services />
       <Projects />
-      <Writing /> 
+      <TechStack />
+      <Services />
+      <Writing />
       <Process />
       <CTAStrip />
       <Contact />
-      <Footer />
     </main>
   );
 }

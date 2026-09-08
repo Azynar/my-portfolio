@@ -1,5 +1,14 @@
+import projects from './projects/data';
+
 export default function sitemap() {
   const baseUrl = 'https://azynardev.vercel.app';
+
+  const projectEntries = projects.map((project) => ({
+    url: `${baseUrl}/projects/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
 
   return [
     {
@@ -9,16 +18,11 @@ export default function sitemap() {
       priority: 1,
     },
     {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...projectEntries,
   ];
 }

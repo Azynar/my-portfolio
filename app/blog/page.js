@@ -1,24 +1,33 @@
-import BlogCard from './components/BlogCard';
 import Link from 'next/link';
+import { FiArrowLeft } from 'react-icons/fi';
+import BlogCard from './components/BlogCard';
+
+export const metadata = {
+  title: 'Technical Writing & Articles',
+  description:
+    'Engineering essays, production postmortems, and architectural deep-dives on Web Development, Next.js, and APIs by Abdulazeem Badmus.',
+};
 
 const articles = [
   {
     number: '01',
     title: 'AI is Smart. Blockchain is Honest. Here\'s What Happens When They Work Together.',
-    summary: 'How AI and blockchain work together to create verifiable, transparent, and trustworthy systems — preventing bias and proving data integrity.',
+    summary:
+      'How distributed cryptographic ledgers and automated systems work together to create verifiable, transparent systems and data integrity guardrails.',
     date: 'April 2026',
     readTime: '9 min read',
-    tags: ['AI', 'Blockchain'],
+    tags: ['Architecture', 'System Design'],
     href: 'https://azynar.hashnode.dev/ai-is-smart-blockchain-is-honest-here-s-what-happens-when-they-work-together',
     platform: 'Hashnode',
   },
   {
     number: '02',
     title: 'AI Coding in 2026: What Actually Breaks in Production',
-    summary: 'A developer\'s honest breakdown of AI coding tools, real production failures, security vulnerabilities, and what founders need to know.',
+    summary:
+      'An analysis of AI-assisted engineering workflows, context constraints, subtle edge case bugs in async logic, and production stability considerations.',
     date: 'June 2026',
     readTime: '12 min read',
-    tags: ['AI', 'Production'],
+    tags: ['Production', 'Engineering', 'Developer Tooling'],
     href: 'https://azynar.hashnode.dev/beyond-the-vibe-what-ai-coding-actually-looks-like-in-2026',
     platform: 'Hashnode',
   },
@@ -26,30 +35,36 @@ const articles = [
 
 export default function Blog() {
   return (
-    <main className="min-h-screen bg-[var(--bg)]">
+    <main className="min-h-screen bg-[var(--bg)] px-6 pt-32 pb-24 md:px-24 md:pt-40 md:pb-32">
+      <div className="mx-auto max-w-5xl">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--muted)] transition-colors hover:text-[var(--text)] hover:border-[var(--text)]/30 mb-8"
+        >
+          <FiArrowLeft size={13} />
+          <span>Back to Home</span>
+        </Link>
 
-    <div className="mx-auto max-w-6xl px-6 pb-20 pt-32 md:px-24 md:pb-28 md:pt-40">
+        <div className="mb-12 max-w-2xl">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] font-[var(--font-syne)] mb-2 block">
+            Articles &amp; Insights
+          </span>
 
-      <Link href="/" className="mb-12 inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-5 py-2 text-xs text-[var(--text)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]">
-        ← Back to Home
-      </Link>
+          <h1 className="text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl md:text-5xl">
+            The <span className="text-[var(--accent)]">Engineering Blog</span>.
+          </h1>
 
-        <p className="mb-4 text-sm text-[var(--muted)]">Writing</p>
-        <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] md:text-6xl">
-          The <span className="text-[var(--accent)]">Blog</span>.
-        </h1>
-        <p className="mb-16 max-w-xl text-sm leading-relaxed text-[var(--muted)]">
-          I write about AI, Web3, and what it actually looks like to build real things — no hype, just what worked and what broke.
-        </p>
+          <p className="mt-3 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
+            Writing about web engineering, system architecture, performance optimization, and lessons learned from production software.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {articles.map((article) => (
             <BlogCard key={article.number} article={article} />
           ))}
         </div>
-
       </div>
-
     </main>
   );
 }
