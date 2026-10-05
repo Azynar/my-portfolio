@@ -51,7 +51,7 @@ export const metadata = {
       "Crafting high-speed web apps and reliable automated systems with Next.js, React, TypeScript, and Node.js.",
     images: [
       {
-        url: "/og.svg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Abdulazeem Badmus (Azynar) — Web Developer",
@@ -63,7 +63,7 @@ export const metadata = {
     title: "Abdulazeem Badmus — Web Developer & Automation Engineer",
     description: "Crafting high-speed web apps and automated systems with Next.js, React, TypeScript, and Node.js.",
     creator: "@Azynar01",
-    images: ["/og.svg"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,
