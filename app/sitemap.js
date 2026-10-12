@@ -10,6 +10,18 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
+  const serviceEntries = [
+    'websites-digital-experiences',
+    'ecommerce-websites',
+    'web-applications',
+    'business-systems-integrations',
+  ].map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -23,6 +35,7 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    ...serviceEntries,
     {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),
