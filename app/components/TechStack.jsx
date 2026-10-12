@@ -57,11 +57,11 @@ export default function TechStack() {
               Skills &amp; Architecture
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
-              Built for speed. <span className="text-[var(--accent)]">Engineered to scale.</span>
+              Useful tools. <span className="text-[var(--accent)]">Thoughtful implementation.</span>
             </h2>
           </div>
           <p className="mt-3 max-w-md text-xs text-[var(--muted)] sm:text-sm md:mt-0">
-            I pick modern, battle-tested tools that eliminate boilerplate, load in sub-seconds, and stay reliable in production.
+            I choose tools based on the actual product need, the project constraints, and the maintainability of the final work.
           </p>
         </div>
 

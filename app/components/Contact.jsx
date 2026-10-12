@@ -89,11 +89,11 @@ export default function Contact() {
               Get In Touch
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
-              Let&apos;s build something <span className="text-[var(--accent)]">remarkable</span>.
+              Tell me what you need to build.
             </h2>
           </div>
           <p className="mt-3 max-w-md text-xs text-[var(--muted)] sm:text-sm md:mt-0">
-            I typically respond within 24 hours. Send a direct message, schedule a call, or reach out on WhatsApp.
+            Share a little about your business, the problem you want to solve, and what you would like customers or staff to be able to do.
           </p>
         </div>
 

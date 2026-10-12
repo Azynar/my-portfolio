@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
 
   if (!project) {
     return {
-      title: 'Project Not Found | Azynar',
+      title: { absolute: 'Project Not Found | AZYNAR' },
       description: 'The requested project case study could not be found.',
     };
   }
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
   const imageUrl = project.image ? new URL(project.image, SITE_BASE).toString() : undefined;
 
   return {
-    title: `${project.title} — Case Study | Azynar`,
+    title: { absolute: `${project.title} — Case Study | AZYNAR` },
     description: project.desc,
     openGraph: {
       title: `${project.title} | Azynar`,

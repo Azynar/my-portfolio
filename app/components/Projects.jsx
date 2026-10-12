@@ -18,14 +18,14 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] font-[var(--font-syne)]">
-              Selected Case Studies
+              Selected Work
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
-              Work that delivered <span className="text-[var(--accent)]">real impact</span>.
+              A selection of websites, apps, and digital experiences.
             </h2>
           </div>
           <p className="mt-3 max-w-md text-xs text-[var(--muted)] sm:text-sm md:mt-0">
-            Every project is built to solve a specific bottleneck: slow performance, complex user onboarding, or manual operations.
+            A selection of websites, web applications, prototypes, and digital experiences showing how I approach requirements, implementation, and practical problem-solving.
           </p>
         </div>
 

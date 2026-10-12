@@ -32,7 +32,7 @@ export default function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
               <span className="text-[11px] font-medium tracking-wide">
-                Available for Freelance &amp; Contract Work
+                Available for selected projects
               </span>
             </Badge>
           </motion.div>
@@ -43,7 +43,7 @@ export default function Hero() {
             transition={{ duration: 0.4, delay: 0.08 }}
             className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--muted)] font-[var(--font-syne)]"
           >
-            Abdulazeem Badmus · Building as Azynar
+            AZYNAR — Web Developer &amp; Digital Solutions Builder
           </motion.p>
 
           <motion.h1
@@ -52,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.12 }}
             className="mb-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-5xl md:text-6xl"
           >
-            I turn ideas into <span className="text-[var(--accent)]">shipped web products</span> that deliver results.
+            Digital solutions for the way your business works.
           </motion.h1>
 
           <motion.p
@@ -61,29 +61,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.18 }}
             className="mb-8 max-w-lg text-sm leading-relaxed text-[var(--muted)] sm:text-base"
           >
-            Web developer building responsive, fast user interfaces with React, Next.js, TypeScript, and Tailwind CSS—growing towards full-stack with Node.js, Supabase, and REST API integrations.
+            AZYNAR is the digital solutions brand of Badmus Abdulazeem Babatunde. I build websites, web applications, and business systems that help companies serve customers, manage operations, and turn ideas into working digital products.
           </motion.p>
-
-          {/* Metric Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.24 }}
-            className="mb-8 grid max-w-md grid-cols-3 gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-xs"
-          >
-            <div>
-              <p className="text-xl font-bold text-[var(--text)] font-[var(--font-syne)]">3+ Yrs</p>
-              <p className="text-[11px] text-[var(--muted)]">Shipping Code</p>
-            </div>
-            <div className="border-x border-[var(--border)] px-3">
-              <p className="text-xl font-bold text-[var(--accent)] font-[var(--font-syne)]">&lt; 48h</p>
-              <p className="text-[11px] text-[var(--muted)]">Sprint Response</p>
-            </div>
-            <div>
-              <p className="text-xl font-bold text-[var(--text)] font-[var(--font-syne)]">100%</p>
-              <p className="text-[11px] text-[var(--muted)]">IP Handover</p>
-            </div>
-          </motion.div>
 
           {/* Action CTAs */}
           <motion.div
@@ -97,7 +76,7 @@ export default function Hero() {
               onClick={() => scrollTo('contact')}
               className="rounded-full px-6 font-semibold"
             >
-              <span>Let&apos;s Build Together</span>
+              <span>Discuss Your Project</span>
               <FiArrowRight size={14} />
             </Button>
 
@@ -107,7 +86,7 @@ export default function Hero() {
               onClick={() => scrollTo('projects')}
               className="rounded-full px-6 font-semibold"
             >
-              <span>Explore Projects</span>
+              <span>View Selected Work</span>
             </Button>
 
             <a

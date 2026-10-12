@@ -27,19 +27,19 @@ export default function About() {
           </span>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
-            From first concept to <span className="text-[var(--accent)]">production scale</span>.
+            Built around useful outcomes—and better engineering.
           </h2>
 
           <p className="text-sm leading-relaxed text-[var(--muted)]">
-            I&apos;m <strong className="text-[var(--text)]">Abdulazeem Badmus</strong> — a Computer Science graduate from the University of Ilorin, building under the alias <strong className="text-[var(--text)]">Azynar</strong>.
+            I&apos;m <strong className="text-[var(--text)]">Abdulazeem Badmus</strong>, the developer behind <strong className="text-[var(--text)]">AZYNAR</strong>. I build websites, web applications, and business systems for founders and businesses that need a clearer digital experience and a more reliable way to serve customers or manage operations.
           </p>
 
           <p className="text-sm leading-relaxed text-[var(--muted)]">
-            I work primarily as a web developer specializing in Next.js, React, Tailwind CSS, and TypeScript, actively growing into a full-stack developer by building backend integrations with Node.js, Supabase, and REST APIs.
+            I approach each project by understanding the business problem first, clarifying the requirements, and then choosing the right solution—whether that is a public-facing website, a workflow tool, a booking interface, or a connected system.
           </p>
 
           <p className="text-sm leading-relaxed text-[var(--muted)]">
-            Over the past 3+ years, I&apos;ve helped founders and businesses take ideas from designs to live, performant applications. My focus is writing clean, maintainable code that delivers great user experiences and real value.
+            Alongside client work, I&apos;m strengthening my foundations in JavaScript, TypeScript, React, backend development, databases, testing, and software engineering practices as I move toward fuller-stack engineering work.
           </p>
 
           {/* Value Highlights */}

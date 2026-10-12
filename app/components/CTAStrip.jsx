@@ -30,11 +30,10 @@ export default function CTAStrip() {
               Open for Opportunities
             </Badge>
             <h2 className="text-2xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-3xl">
-              Have a project in mind? <br />
-              <span className="text-[var(--accent)]">Let&apos;s turn it into reality.</span>
+              Have a project in mind?
             </h2>
             <p className="mt-2 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
-              Whether you need a high-converting web app built from scratch or manual workflows automated—I&apos;m ready to help you ship.
+              Tell me what your business or product needs to achieve, what users need to do, and what constraints matter. We can work out whether a website, web application, or connected business system is the right fit.
             </p>
           </div>
 

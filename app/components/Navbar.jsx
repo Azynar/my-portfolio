@@ -10,10 +10,11 @@ import { useTheme } from './ThemeProvider';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { id: 'about', label: 'About' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'stack', label: 'Stack' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'home', label: 'Home', href: '/' },
+  { id: 'services', label: 'Services', href: '/services' },
+  { id: 'projects', label: 'Projects', href: '/projects' },
+  { id: 'about', label: 'About', href: '/about' },
+  { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -68,15 +69,23 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [isHome]);
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (link) => {
     setIsOpen(false);
+
+    if (link.href !== '/' && !link.href.startsWith('/#')) {
+      router.push(link.href);
+      return;
+    }
+
     if (isHome) {
-      const element = document.getElementById(id);
+      const element = link.id ? document.getElementById(link.id) : null;
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else {
-      router.push(`/#${id}`);
+      router.push(link.href === '/' ? '/' : `/#${link.id}`);
     }
   };
 
@@ -117,7 +126,7 @@ export default function Navbar() {
               return (
                 <li key={link.id}>
                   <button
-                    onClick={() => handleNavClick(link.id)}
+                    onClick={() => handleNavClick(link)}
                     className={`text-xs font-medium transition-colors hover:text-[var(--text)] ${
                       isActive ? 'text-[var(--accent)] font-semibold' : 'text-[var(--muted)]'
                     }`}
@@ -143,10 +152,10 @@ export default function Navbar() {
 
             <Button
               size="sm"
-              onClick={() => handleNavClick('contact')}
+              onClick={() => handleNavClick({ id: 'contact', href: '/contact', label: 'Contact' })}
               className="rounded-full px-4 text-xs font-semibold"
             >
-              <span>Get in Touch</span>
+              <span>Discuss a Project</span>
               <FiArrowRight size={12} />
             </Button>
 
@@ -196,7 +205,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => handleNavClick(link.id)}
+              onClick={() => handleNavClick(link)}
               className="rounded-lg px-3 py-2 text-left text-xs font-medium text-[var(--text)] transition-colors hover:bg-[var(--surface-2)]"
             >
               {link.label}
@@ -211,10 +220,10 @@ export default function Navbar() {
           </Link>
           <Button
             size="sm"
-            onClick={() => handleNavClick('contact')}
+            onClick={() => handleNavClick({ id: 'contact', href: '/contact', label: 'Contact' })}
             className="mt-2 w-full rounded-xl py-2.5 text-xs font-semibold"
           >
-            <span>Get in Touch</span>
+            <span>Discuss a Project</span>
             <FiArrowRight size={12} />
           </Button>
         </div>

@@ -40,11 +40,11 @@ export default function Process() {
               Collaborative Workflow
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
-              Zero guesswork. <span className="text-[var(--accent)]">Predictable delivery.</span>
+              A clear process from requirements to launch.
             </h2>
           </div>
           <p className="mt-3 max-w-md text-xs text-[var(--muted)] sm:text-sm md:mt-0">
-            A battle-tested 4-step framework designed to maintain velocity without sacrificing code quality.
+            Understand the business, define the scope, build the agreed solution, and review the result before launch.
           </p>
         </div>
 

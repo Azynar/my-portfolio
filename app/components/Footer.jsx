@@ -11,14 +11,14 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--surface)] px-6 py-12 md:px-24">
-      <div className="mx-auto flex max-w-5xl flex-col gap-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-1">
             <Link href="/" className="text-lg font-bold font-[var(--font-syne)] text-[var(--text)] tracking-tight">
               Azynar<span className="text-[var(--accent)]">.</span>
             </Link>
-            <p className="text-xs text-[var(--muted)] max-w-sm">
-              Web Developer. Shipping modern web apps and high-leverage software.
+            <p className="max-w-sm text-xs text-[var(--muted)]">
+              Web Developer & Digital Solutions Builder. Websites, web apps, and business systems built around real business needs.
             </p>
           </div>
 
@@ -79,8 +79,11 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 border-t border-[var(--border)] pt-6 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Abdulazeem Badmus. All rights reserved.</p>
-          <p className="text-[11px]">Ibadan, Nigeria (UTC+1)</p>
+          <p>© {new Date().getFullYear()} AZYNAR. All rights reserved.</p>
+          <div className="flex items-center gap-4 text-[11px]">
+            <a href="mailto:azynar35@gmail.com" className="hover:text-[var(--text)]">azynar35@gmail.com</a>
+            <a href="https://wa.me/2347032396032" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">WhatsApp</a>
+          </div>
         </div>
       </div>
     </footer>

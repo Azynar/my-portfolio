@@ -7,42 +7,42 @@ import { Badge } from '@/components/ui/badge';
 const services = [
   {
     icon: <FiGlobe size={20} className="text-[var(--accent)]" />,
-    tag: 'Web & Frontend',
-    title: 'High-Performance Web Development',
-    headline: 'Fast, conversion-focused web apps built to launch in weeks, not months.',
+    tag: 'Websites & Digital Experiences',
+    title: 'Business and marketing websites',
+    headline: 'Clear and credible digital experiences that help visitors understand your offer and take the next step.',
     deliverables: [
-      'Next.js App Router & React 19 architecture',
-      'Sub-second page loads & 95+ Lighthouse score',
-      'TypeScript type safety & Tailwind CSS styling',
-      'Responsive mobile-first user interfaces',
+      'Responsive business and marketing websites',
+      'Service, about, and contact pages',
+      'Contact forms and WhatsApp flows',
+      'Basic on-page SEO and deployment support',
     ],
-    cta: 'Start Web Project',
+    cta: 'Explore Websites',
   },
   {
     icon: <FiServer size={20} className="text-[var(--accent)]" />,
-    tag: 'Backend & Database',
-    title: 'Backend & REST API Integration',
-    headline: 'Scalable server-side logic, databases, and third-party API connectivity.',
+    tag: 'Web Applications & Custom Software',
+    title: 'User-facing web applications',
+    headline: 'Scoped web products, portals, dashboards, and booking experiences built around actual user needs.',
     deliverables: [
-      'Node.js endpoints & REST API route handlers',
-      'Supabase & PostgreSQL database modeling',
-      'CRUD operations (Fetch, Patch, Post, Delete)',
-      'Secure authentication & transactional emails',
+      'Customer portals and internal dashboards',
+      'Booking and registration workflows',
+      'API-connected interfaces and backend routes',
+      'User roles, permissions, and testing planning',
     ],
-    cta: 'Discuss API Integration',
+    cta: 'Explore Web Applications',
   },
   {
     icon: <FiCpu size={20} className="text-[var(--accent)]" />,
-    tag: 'Automation & Bots',
-    title: 'Custom Workflow Automation Systems',
-    headline: 'Eliminate repetitive manual busywork and streamline your operations.',
+    tag: 'Business Systems & Integrations',
+    title: 'Operational tools and integrations',
+    headline: 'Workflow improvements and system connections that make business operations more manageable.',
     deliverables: [
-      'Real-time Telegram & Discord notification bots',
-      'Web scrapers & data extraction scripts',
-      'Webhook syncs between payment & CRM platforms',
-      'Scheduled background cron jobs with zero downtime',
+      'Lead and enquiry collection flows',
+      'Automated routing and notifications',
+      'Third-party API integrations',
+      'Internal dashboards and process improvements',
     ],
-    cta: 'Automate My Workflows',
+    cta: 'Explore Business Systems',
   },
 ];
 
@@ -61,11 +61,11 @@ export default function Services() {
               Services &amp; Offerings
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--text)] font-[var(--font-syne)] sm:text-4xl">
-              Tailored solutions. <span className="text-[var(--accent)]">Measurable ROI.</span>
+              Practical digital solutions for growing businesses.
             </h2>
           </div>
           <p className="mt-3 max-w-md text-xs text-[var(--muted)] sm:text-sm md:mt-0">
-            I partner with founders, agencies, and businesses to design, engineer, and deploy high-leverage software.
+            Start with the problem you need to solve. The right solution may be a public-facing website, a web application, or a business system connected to existing tools.
           </p>
         </div>
 
